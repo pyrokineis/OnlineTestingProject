@@ -4,21 +4,45 @@
     <projectFile>OnlineTestingProject/OnlineTestingProject.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="" />
+    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/4d/9bbfa639/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/69/ccf2f895/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="27Ml5I7AIdREcQdkAza04voIs0p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="OnlineTestingProject" type="DotNetProject" factoryName=".NET Project">
@@ -50,6 +74,9 @@
       <option name="presentableId" value="Default" />
       <updated>1649137665698</updated>
       <workItem from="1649137671232" duration="177000" />
+      <workItem from="1649164507992" duration="448000" />
+      <workItem from="1649238581076" duration="1344000" />
+      <workItem from="1649250459293" duration="407000" />
     </task>
     <servers />
   </component>
@@ -58,13 +85,20 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="461" y="165" key="SettingsEditor" timestamp="1649137851680">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1649137851680" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

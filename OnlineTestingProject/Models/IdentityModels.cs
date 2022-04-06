@@ -22,9 +22,13 @@ namespace OnlineTestingProject.Models
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
-        {
-
-        }
+        { }
+        
+        // public DbSet<User> Users { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionType> QuestionTypes { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<AnswerType> AnswerTypes { get; set; }
 
         public static ApplicationDbContext Create()
         {
