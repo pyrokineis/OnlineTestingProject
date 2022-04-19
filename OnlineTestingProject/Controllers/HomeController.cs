@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineTestingProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,15 @@ namespace OnlineTestingProject.Controllers
     {
         public ActionResult Index()
         {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                db.AnswerTypes.Add(new AnswerType
+                {
+                    Name = "Testoviy"
+                });
+            }
             return View();
+
         }
 
         public ActionResult About()

@@ -125,3 +125,9 @@ C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\On
 C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.csproj.CopyComplete
 C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.dll
 C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.pdb
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.Migrations.InitialCreate.resources
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.csproj.GenerateResource.cache
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.Migrations.firstButNotLast.resources
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.Migrations.secondButNotLast.resources
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.Migrations.Usernamesurname.resources
+C:\Visual Studio projects\OnlineTestingProject\OnlineTestingProject\obj\Debug\OnlineTestingProject.Migrations.AppUserChange.resources

@@ -173,6 +173,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204041727042_InitialCreate.cs" />
+    <Compile Include="Migrations\202204041727042_InitialCreate.Designer.cs">
+      <DependentUpon>202204041727042_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191157353_firstButNotLast.cs" />
+    <Compile Include="Migrations\202204191157353_firstButNotLast.Designer.cs">
+      <DependentUpon>202204191157353_firstButNotLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191232363_secondButNotLast.cs" />
+    <Compile Include="Migrations\202204191232363_secondButNotLast.Designer.cs">
+      <DependentUpon>202204191232363_secondButNotLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191234566_Username-surname.cs" />
+    <Compile Include="Migrations\202204191234566_Username-surname.Designer.cs">
+      <DependentUpon>202204191234566_Username-surname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191235368_AppUserChange.cs" />
+    <Compile Include="Migrations\202204191235368_AppUserChange.Designer.cs">
+      <DependentUpon>202204191235368_AppUserChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -252,6 +273,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202204041727042_InitialCreate.resx">
+      <DependentUpon>202204041727042_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191157353_firstButNotLast.resx">
+      <DependentUpon>202204191157353_firstButNotLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191232363_secondButNotLast.resx">
+      <DependentUpon>202204191232363_secondButNotLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191234566_Username-surname.resx">
+      <DependentUpon>202204191234566_Username-surname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191235368_AppUserChange.resx">
+      <DependentUpon>202204191235368_AppUserChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
