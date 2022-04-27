@@ -12,6 +12,7 @@ namespace OnlineTestingProject.Models
         public QuestionType Type { get; set; }
     }
 
+    
     public class QuestionType
     {
         public int QuestionTypeId { get; set; }
@@ -55,7 +56,6 @@ namespace OnlineTestingProject.Models
     {
         public int TestId { get; set; }
         public string Name { get; set; }
-        public User Author { get; set; }
         public string Status { get; set; }
         public DateTime Date { get; set; }
     }

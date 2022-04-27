@@ -69,6 +69,12 @@ namespace OnlineTestingProject.Models
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
 
+        public string Username { get; set; }
+        [Required]
+        public string Firstname { get; set; }
+        [Required]
+        public string Surname { get; set; }
+
         [Required]
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -79,6 +85,7 @@ namespace OnlineTestingProject.Models
         [Display(Name = "Подтверждение пароля")]
         [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
         public string ConfirmPassword { get; set; }
+
     }
 
     public class ResetPasswordViewModel

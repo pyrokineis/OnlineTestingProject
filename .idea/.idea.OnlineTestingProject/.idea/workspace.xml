@@ -22,12 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" afterDir="false" />
-    </list>
+    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="DB pre-commit with error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +81,16 @@
       <updated>1649137665698</updated>
       <workItem from="1649137671232" duration="177000" />
       <workItem from="1650368053738" duration="108000" />
+      <workItem from="1650380134336" duration="53000" />
     </task>
+    <task id="LOCAL-00001" summary="DB pre-commit with error">
+      <created>1650380160521</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650380160521</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +112,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="DB pre-commit with error" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB pre-commit with error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="461" y="165" key="SettingsEditor" timestamp="1650365712651">
@@ -118,5 +124,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1650365713096" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1650380174345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1650380174345" />
   </component>
 </project>

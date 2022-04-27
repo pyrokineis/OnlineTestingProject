@@ -28,7 +28,6 @@ namespace OnlineTestingProject.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         { }
 
-        public new DbSet<Models.User> Users { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionType> QuestionTypes { get; set; }
         public DbSet<UserAnswer> UserAnswers { get; set; }
