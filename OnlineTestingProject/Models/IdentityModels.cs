@@ -24,8 +24,11 @@ namespace OnlineTestingProject.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        // public ApplicationDbContext()
+        //     : base("DefaultConnection", throwIfV1Schema: false)
+        // { }
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MySQL_DB", throwIfV1Schema: false)
         { }
 
         public DbSet<Question> Questions { get; set; }

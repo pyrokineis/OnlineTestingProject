@@ -22,7 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="DB pre-commit with error" />
+    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2022_13_07_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2022_13_07__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/packages.config" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +48,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/4d/9bbfa639/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/69/ccf2f895/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -46,9 +68,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="OnlineTestingProject" type="DotNetProject" factoryName=".NET Project">
@@ -82,6 +106,8 @@
       <workItem from="1649137671232" duration="177000" />
       <workItem from="1650368053738" duration="108000" />
       <workItem from="1650380134336" duration="53000" />
+      <workItem from="1651062886602" duration="1401000" />
+      <workItem from="1651076486132" duration="1382000" />
     </task>
     <task id="LOCAL-00001" summary="DB pre-commit with error">
       <created>1650380160521</created>
@@ -114,19 +140,5 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="DB pre-commit with error" />
     <option name="LAST_COMMIT_MESSAGE" value="DB pre-commit with error" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="461" y="165" key="SettingsEditor" timestamp="1650365712651">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1650365712651" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1650365713096">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1650365713096" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1650380174345">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1650380174345" />
   </component>
 </project>
