@@ -13,10 +13,8 @@ namespace OnlineTestingProject.Controllers
         {
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
-                db.AnswerTypes.Add(new AnswerType
-                {
-                    Name = "Testoviy"
-                });
+                var c = db.AnswerTypes.ToList();
+
             }
             return View();
 

@@ -1,4 +1,4 @@
-namespace OnlineTestingProject.Migrations
+﻿namespace OnlineTestingProject.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,14 +10,13 @@ namespace OnlineTestingProject.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "OnlineTestingProject.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(OnlineTestingProject.Models.ApplicationDbContext context)
+        protected override void Seed(OnlineTestingProject.DAL.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
         }
     }
