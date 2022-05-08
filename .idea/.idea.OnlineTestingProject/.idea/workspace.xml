@@ -23,18 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/contentModel.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IQuestionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/EFUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/kek.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2022_13_07_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2022_13_07__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Web.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" afterDir="false" />
@@ -49,20 +57,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/4d/9bbfa639/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67cff1746da749b9baf6d5db9b7cbcaa12a58/69/ccf2f895/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/kek.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IQuestionService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/EFUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="27Ml5I7AIdREcQdkAza04voIs0p" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,7 +90,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -108,6 +128,8 @@
       <workItem from="1650380134336" duration="53000" />
       <workItem from="1651062886602" duration="1401000" />
       <workItem from="1651076486132" duration="1382000" />
+      <workItem from="1651919664659" duration="2395000" />
+      <workItem from="1651992935870" duration="4640000" />
     </task>
     <task id="LOCAL-00001" summary="DB pre-commit with error">
       <created>1650380160521</created>
@@ -140,5 +162,31 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="DB pre-commit with error" />
     <option name="LAST_COMMIT_MESSAGE" value="DB pre-commit with error" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1651997214450">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1651997214450" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1651997214449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1651997214449" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1651997214449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1651997214449" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1651997214449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1651997214449" />
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1651996391406">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1651996391406" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1651996327228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1651996327228" />
   </component>
 </project>
