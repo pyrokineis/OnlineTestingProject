@@ -19,12 +19,13 @@ namespace OnlineTestingProject.Repositories
         {
             return _dbContext.Questions.ToList();
         }
- 
+
+
         public Question Get(int id)
         {
             return _dbContext.Questions.Find(id);
         }
- 
+
         public void Create(Question qst)
         {
             _dbContext.Questions.Add(qst);
@@ -46,6 +47,15 @@ namespace OnlineTestingProject.Repositories
             if (qst != null)
                 _dbContext.Questions.Remove(qst);
         }
-        
+
+        public void Add(Question item)
+        {
+            _dbContext.Questions.Add(item);
+        }
+
+        public void Save()
+        {
+            _dbContext.SaveChanges();
+        }
     }
 }

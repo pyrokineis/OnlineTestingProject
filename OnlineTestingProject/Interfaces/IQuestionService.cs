@@ -8,5 +8,7 @@ namespace OnlineTestingProject.Interfaces
         void AddQuestion(Question qst);
         List<Question> GetQuestions();
         Question GetQuestion(int id);
+        List<QuestionType> GetAllQuestionTypes();
+        QuestionType GetQuestionType(int id);
     }
 }

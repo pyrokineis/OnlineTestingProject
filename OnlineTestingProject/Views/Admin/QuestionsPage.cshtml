@@ -1,0 +1,21 @@
+﻿@using OnlineTestingProject.Models
+@model List<Question>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+           @foreach(var qst in Model)
+            {
+                <div>
+                    @qst.Text
+                </div>
+            }
+    </div>
+</body>
+</html>
