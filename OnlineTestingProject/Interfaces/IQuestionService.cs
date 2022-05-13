@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using OnlineTestingProject.Models;
+using OnlineTestingProject.Models.Enums;
 
 namespace OnlineTestingProject.Interfaces
 {
@@ -10,5 +11,6 @@ namespace OnlineTestingProject.Interfaces
         Question GetQuestion(int id);
         List<QuestionType> GetAllQuestionTypes();
         QuestionType GetQuestionType(int id);
+        AnswerResult CompareAnswer(UserAnswer userAnswer, Question qst);
     }
 }

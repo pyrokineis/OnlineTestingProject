@@ -1,6 +1,9 @@
 using System;
 using Microsoft.Ajax.Utilities;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using OnlineTestingProject.Interfaces;
+using OnlineTestingProject.Models.Enums;
 
 namespace OnlineTestingProject.Models
 {
@@ -10,8 +13,16 @@ namespace OnlineTestingProject.Models
         public int QuestionId { get; set; }
         public string Text { get; set; }
         public QuestionType Type { get; set; }
+        public string AnswerData { get; set; }
+
     }
 
+    public class QuestionsInTest
+    {
+        public int QuestionsInTestId { get; set; }
+        public Test Test { get; set; }
+        public Question Question { get; set; }
+    }
     
     public class QuestionType
     {
@@ -22,9 +33,13 @@ namespace OnlineTestingProject.Models
     public class UserAnswer
     {
         public int UserAnswerId { get; set; }
-        public AnswerType AnswerType { get; set; }
+        public int UserId { get; set; }
+        public Question Question { get; set; }
+        public Test Test;
         public string Data { get; set; }
+        public AnswerResult Result { get; set; }
     }
+    
     public class Result
     {
         public int ResultId { get; set; }
@@ -33,12 +48,7 @@ namespace OnlineTestingProject.Models
         public Test Test { get; set; }
         public bool IsTrue { get; set; }
     }
-
-    public class AnswerType
-    {
-        public int AnswerTypeId { get; set; }
-        public string Name { get; set; }
-    }
+    
 
     public class Group
     {
@@ -60,18 +70,20 @@ namespace OnlineTestingProject.Models
         public DateTime Date { get; set; }
     }
 
-    public class QuestionsInTest
+    public class TestAssignedGroup
     {
-        public int QuestionsInTestId { get; set; }
+        public int TestAssignedGroupId { get; set; }
         public Test Test { get; set; }
-        public Question Question { get; set; }
+        public Group Group { get; set; }
     }
 
-    public class CorrectAnswer
+    public class TestAssignedUser
     {
-        public int CorrectAnswerId { get; set; }
-        public Question Question { get; set; }
-        public string AnswerData { get; set; }
-        
+        public int TestAssignedUserId { get; set; }
+        public Test Test { get; set; }
+        public int UserId { get; set; }
     }
+    
+
+    
 }

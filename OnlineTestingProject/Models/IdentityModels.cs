@@ -35,12 +35,12 @@ namespace OnlineTestingProject.Models
         public DbSet<QuestionType> QuestionTypes { get; set; }
         public DbSet<UserAnswer> UserAnswers { get; set; }
         public DbSet<Result> Results { get; set; }
-        public DbSet<AnswerType> AnswerTypes { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<UsersInGroup> UsersInGroups { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<QuestionsInTest> QuestionsInTests { get; set; }
-        public DbSet<CorrectAnswer> CorrectAnswers { get; set; }
+        public DbSet<TestAssignedGroup> TestAssignedGroups { get; set; }
+        public DbSet<TestAssignedUser> TestAssignedUsers { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

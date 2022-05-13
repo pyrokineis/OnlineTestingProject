@@ -9,8 +9,9 @@ namespace OnlineTestingProject.Interfaces
     public interface ITestService
     {
         void AddTest(Test qst);
-        List<Test> GetTests();
         Test GetTest(int id);
         List<Test> GetAllTests();
+        List<Group> GetAssignedGroups(Test test);
+        List<int> GetAssignedUsers(Test test);
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using OnlineTestingProject.Interfaces;
 using OnlineTestingProject.Models;
+using OnlineTestingProject.Models.Enums;
 
 namespace OnlineTestingProject.Services
 {
@@ -15,7 +16,7 @@ namespace OnlineTestingProject.Services
         }
         public Question GetQuestion(int id)
         {
-            throw new System.NotImplementedException();
+            return _dbContext.Questions.Get(id);
         }
         public List<Question> GetQuestions()
         {
@@ -33,6 +34,11 @@ namespace OnlineTestingProject.Services
         }
 
         public List<QuestionType> GetAllQuestionTypes()
+        {
+            return _dbContext.QuestionTypes.GetAll();
+        }
+
+        public AnswerResult CompareAnswer(UserAnswer userAnswer, Question qst)
         {
             throw new System.NotImplementedException();
         }

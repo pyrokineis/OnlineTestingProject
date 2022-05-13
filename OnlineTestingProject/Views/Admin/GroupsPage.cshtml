@@ -1,0 +1,29 @@
+﻿@model List<OnlineTestingProject.Models.Group>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+<div>
+    <b>Добавить группу</b>
+    @using (Html.BeginForm("AddGroup", "Admin", FormMethod.Post))
+    {
+        
+    }
+</div>
+<div>
+    <b>Все группы</b>
+    @foreach (var qst in Model)
+    {
+        <div>
+            @qst.Name
+        </div>
+    }
+</div>
+</body>
+</html>

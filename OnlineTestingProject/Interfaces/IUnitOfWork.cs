@@ -8,7 +8,9 @@ namespace OnlineTestingProject.Interfaces
         IRepository<Question> Questions { get;}
         IRepository<QuestionType> QuestionTypes { get; }
         IRepository<Test> Tests { get; }
-
+        IRepository<Group> Groups { get; }
+        IRepository<TestAssignedGroup> TestAssignedGroups {get;}
+        IRepository<TestAssignedUser> TestAssignedUsers {get;}
         void Save();
     }
 }
