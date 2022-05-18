@@ -385,7 +385,6 @@ C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProjec
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\Owin.dll
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Buffers.dll
-C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Data.SqlClient.dll
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Memory.dll
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Numerics.Vectors.dll
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Runtime.CompilerServices.Unsafe.dll
@@ -409,7 +408,6 @@ C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProjec
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\MySql.Data.xml
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\MySql.Data.EntityFramework.xml
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Buffers.xml
-C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Data.SqlClient.xml
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Memory.xml
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Numerics.Vectors.xml
 C:\Users\Admin\Desktop\temp\3.1.2-3.1.3\OnlineTestingProject\OnlineTestingProject\bin\System.Runtime.CompilerServices.Unsafe.xml

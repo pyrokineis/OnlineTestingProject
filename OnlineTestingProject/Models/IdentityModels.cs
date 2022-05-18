@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MySql.Data.EntityFramework;
 using OnlineTestingProject.Models;
 
 namespace OnlineTestingProject.Models
@@ -21,15 +22,15 @@ namespace OnlineTestingProject.Models
         }
     }
     
-
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         { }
-        // public ApplicationDbContext()
-        //     : base("MySQL_DB", throwIfV1Schema: false)
-        // { }
+        //public ApplicationDbContext()
+        //    : base("MySQL_DB", throwIfV1Schema: false)
+        //{ }
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionType> QuestionTypes { get; set; }
@@ -45,5 +46,15 @@ namespace OnlineTestingProject.Models
         {
             return new ApplicationDbContext();
         }
+
+        //protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<IdentityUser>().ToTable("aspnetusers");
+        //    modelBuilder.Entity<IdentityRole>().ToTable("aspnetroles");
+        //    modelBuilder.Entity<IdentityUserRole>().ToTable("aspnetuserroles");
+        //    modelBuilder.Entity<IdentityUserLogin>().ToTable("aspnetuserlogins");
+        //    modelBuilder.Entity<IdentityUserClaim>().ToTable("aspnetuserclaims");  
+        //}
     }
 }
