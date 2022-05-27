@@ -22,19 +22,58 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="">
+    <list default="true" id="86bfbad7-f522-448a-9a4c-42b93d298445" name="Default Changelist" comment="trash commit">
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205131153552_GroupsAssigneesAndFixes.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205131153552_GroupsAssigneesAndFixes.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270844434_UserInGroupIdFix.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270844434_UserInGroupIdFix.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270844434_UserInGroupIdFix.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270902187_UserIdsToString.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270902187_UserIdsToString.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205270902187_UserIdsToString.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205271201300_resultDeleted.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205271201300_resultDeleted.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Migrations/202205271201300_resultDeleted.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/UserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/UsersInGroupRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Services/UserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupPage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/TestPage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/TestsPage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Errors/Error.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineTestingProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/OnlineTestingProject/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OnlineTestingProject/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/App_Data/aspnet-OnlineTestingProject-20220404082048.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/App_Data/aspnet-OnlineTestingProject-20220404082048.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/App_Data/aspnet-OnlineTestingProject-20220404082048_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/App_Data/aspnet-OnlineTestingProject-20220404082048_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/App_Start/RouteConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/App_Start/RouteConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IGroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IGroupService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IQuestionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IQuestionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/ITestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/ITestService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/Enums/AnswerResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/Enums/AnswerResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/OnlineTestingProject.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/EFUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/EFUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/GroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/GroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionTypeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedGroupRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedGroupRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Services/GroupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Services/GroupService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Services/TestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Services/TestService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/AddGroup.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupsPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupsPage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/QuestionsPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/QuestionsPage.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.dll.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/bin/OnlineTestingProject.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.AssemblyReference.cache" afterDir="false" />
@@ -43,7 +82,6 @@
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/obj/Debug/OnlineTestingProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineTestingProject/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineTestingProject/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +99,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/kek.cshtml" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/ManageController.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Test/Index.cshtml" />
@@ -72,25 +106,37 @@
         <option value="$PROJECT_DIR$/OnlineTestingProject/Models/Enums/AnswerResult.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IAnswerService.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IQuestionService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/GroupRepository.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedGroupRepository.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedUserRepository.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/EFUnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/ITestService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/TestService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IGroupService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/GroupService.cs" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupsPage.cshtml" />
-        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/AddGroup.cshtml" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Models/IdentityModels.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/AccountController.cs" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Web.config" />
         <option value="$PROJECT_DIR$/OnlineTestingProject/Global.asax.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/App_Start/UnityConfig.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/Index.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/QuestionsPage.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Models/DataModels.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/ITestService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/UserRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/QuestionTypeRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedGroupRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestAssignedUserRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/TestRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/UsersInGroupRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/GroupService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/TestService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/QuestionService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Interfaces/IUserService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Services/UserService.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Repositories/GroupRepository.cs" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupsPage.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Views/Admin/GroupPage.cshtml" />
+        <option value="$PROJECT_DIR$/OnlineTestingProject/Controllers/AdminController.cs" />
       </list>
     </option>
   </component>
@@ -103,10 +149,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;sqlserver" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -153,6 +202,12 @@
       <workItem from="1652520163325" duration="1194000" />
       <workItem from="1652869126457" duration="3143000" />
       <workItem from="1652877442235" duration="2068000" />
+      <workItem from="1652894305243" duration="28000" />
+      <workItem from="1653420832932" duration="43000" />
+      <workItem from="1653555040440" duration="1013000" />
+      <workItem from="1653557950209" duration="2026000" />
+      <workItem from="1653637383246" duration="2365000" />
+      <workItem from="1653641160705" duration="4049000" />
     </task>
     <task id="LOCAL-00001" summary="DB pre-commit with error">
       <created>1650380160521</created>
@@ -182,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652449637781</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="trash commit">
+      <created>1652894321484</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652894321484</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,29 +270,94 @@
     <MESSAGE value="DI, repos, Interfaces and Services base" />
     <MESSAGE value="DI fix, repos and services added" />
     <MESSAGE value="bd fixes, more repos and services" />
-    <option name="LAST_COMMIT_MESSAGE" value="bd fixes, more repos and services" />
+    <MESSAGE value="trash commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="trash commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1652877491872">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1653559984242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1652877491872" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1652880579948">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653559984242" />
+    <state width="1877" height="152" key="GridCell.Tab.0.bottom" timestamp="1653646331943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1652880579948" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1652880579948">
+    <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653646331943" />
+    <state width="1877" height="152" key="GridCell.Tab.0.center" timestamp="1653646331942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1652880579948" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1652880579948">
+    <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653646331942" />
+    <state width="1877" height="152" key="GridCell.Tab.0.left" timestamp="1653646331942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1652880579948" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1652880579948">
+    <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653646331942" />
+    <state width="1877" height="152" key="GridCell.Tab.0.right" timestamp="1653646331942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1652880579948" />
+    <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653646331942" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1653646330352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330352" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.4.bottom" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.4.center" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.4.left" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
+    <state width="1877" height="375" key="GridCell.Tab.4.right" timestamp="1653646330353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653646330353" />
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1651996391406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -239,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1651996327228" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1652449647702">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1652894326601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1652449647702" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1652894326601" />
     <state x="637" y="119" width="646" height="801" key="find.popup" timestamp="1652000596587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

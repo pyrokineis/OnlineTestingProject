@@ -21,22 +21,7 @@ namespace OnlineTestingProject.Controllers
         }
         public ActionResult Index()
         {
-
-            //_questionService.AddQuestion(new Question
-            //{
-            //    Text="lalala",
-            //    Type = _questionService.GetQuestionType(1)
-            //});
-            //_questionService.AddQuestion(new Question
-            //{
-            //    Text = "lolala",
-            //    Type = _questionService.GetQuestionType(1)
-            //});
-            //_questionService.AddQuestion(new Question
-            //{
-            //    Text = "lelala",
-            //    Type = _questionService.GetQuestionType(1)
-            //}); ;
+            
             return View();
 
         }

@@ -7,4 +7,9 @@
         Max = 2,
 
     }
+
+    public enum TestStatus
+    {
+
+    }
 }

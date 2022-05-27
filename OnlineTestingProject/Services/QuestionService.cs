@@ -16,7 +16,7 @@ namespace OnlineTestingProject.Services
         }
         public Question GetQuestion(int id)
         {
-            return _dbContext.Questions.Get(id);
+            return _dbContext.Questions.Get(id.ToString());
         }
         public List<Question> GetQuestions()
         {
@@ -30,12 +30,20 @@ namespace OnlineTestingProject.Services
 
         public QuestionType GetQuestionType(int id)
         {
-            return _dbContext.QuestionTypes.Get(id);
+            return _dbContext.QuestionTypes.Get(id.ToString());
         }
 
         public List<QuestionType> GetAllQuestionTypes()
         {
             return _dbContext.QuestionTypes.GetAll();
+        }
+        public List<string> GetAllQuestionTypesStrs()
+        {
+            return _dbContext.QuestionTypes.GetAll().Select(t => t.Name).ToList();
+        }
+        public QuestionType FindQuestionType(string name)
+        {
+            return _dbContext.QuestionTypes.Find(m=>m.Name==name.Trim()).FirstOrDefault();
         }
 
         public AnswerResult CompareAnswer(UserAnswer userAnswer, Question qst)

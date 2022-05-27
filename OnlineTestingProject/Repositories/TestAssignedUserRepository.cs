@@ -21,7 +21,7 @@ namespace OnlineTestingProject.Repositories
         }
 
 
-        public TestAssignedUser Get(int id)
+        public TestAssignedUser Get(string id)
         {
             return _dbContext.TestAssignedUsers.Find(id);
         }

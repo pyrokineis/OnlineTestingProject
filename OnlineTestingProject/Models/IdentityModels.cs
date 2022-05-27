@@ -35,7 +35,6 @@ namespace OnlineTestingProject.Models
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionType> QuestionTypes { get; set; }
         public DbSet<UserAnswer> UserAnswers { get; set; }
-        public DbSet<Result> Results { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<UsersInGroup> UsersInGroups { get; set; }
         public DbSet<Test> Tests { get; set; }

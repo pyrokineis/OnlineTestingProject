@@ -12,6 +12,10 @@ namespace OnlineTestingProject.Interfaces
         Test GetTest(int id);
         List<Test> GetAllTests();
         List<Group> GetAssignedGroups(Test test);
-        List<int> GetAssignedUsers(Test test);
+        List<ApplicationUser> GetAssignedUsers(Test test);
+        void AssignUserForTest(ApplicationUser user, Test test);
+        void AssignGroupForTest(Group gr, Test test);
+        void DeasignUserFromTest(ApplicationUser user, Test test);
+        void DeasignGroupFromTest(Group gr, Test test);
     }
 }

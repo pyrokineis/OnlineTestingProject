@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OnlineTestingProject.Interfaces;
 using OnlineTestingProject.Models;
 
@@ -16,24 +17,31 @@ namespace OnlineTestingProject.Services
         {
            return _dbContext.Groups.GetAll();
         }
-        public void AssignTestToGroup(Test test, Group group)
+        public Group GetGroup(int id)
         {
-            throw new System.NotImplementedException();
+           return _dbContext.Groups.Get(id.ToString());
+        }
+        public List<ApplicationUser> GetUsersInGroup(int id)
+        {
+            var list = _dbContext.UsersInGroups.GetAll().Where(g => g.GroupId == id).Select(g => g.UserId).ToList();
+            List<ApplicationUser> list2 = new List<ApplicationUser>();
+            foreach (string Id in list)
+            {
+                list2.Add(_dbContext.Users.Get(Id));
+            }
+            return list2;
+            // throw new System.NotImplementedException();
+        }
+        public Group GetGroupByName(string name)
+        {
+            var list = _dbContext.Groups.Find(r => r.Name == name).FirstOrDefault();
+            return list;
         }
 
-        public void AssignTestToUser(Test test, ApplicationUser user)
+        public void AddGroup(Group gr)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void DeasignTestForGroup(Test test, Group group)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void DeasignTestForUser(Test test, ApplicationUser user)
-        {
-            throw new System.NotImplementedException();
+            _dbContext.Groups.Add(gr);
+            _dbContext.Save();
         }
     }
 }

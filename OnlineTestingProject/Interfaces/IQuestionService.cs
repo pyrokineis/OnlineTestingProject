@@ -10,7 +10,9 @@ namespace OnlineTestingProject.Interfaces
         List<Question> GetQuestions();
         Question GetQuestion(int id);
         List<QuestionType> GetAllQuestionTypes();
+        List<string> GetAllQuestionTypesStrs();
         QuestionType GetQuestionType(int id);
         AnswerResult CompareAnswer(UserAnswer userAnswer, Question qst);
+        QuestionType FindQuestionType(string name);
     }
 }

@@ -242,6 +242,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ITestService.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Migrations\202204041727042_InitialCreate.cs" />
     <Compile Include="Migrations\202204041727042_InitialCreate.Designer.cs">
       <DependentUpon>202204041727042_InitialCreate.cs</DependentUpon>
@@ -262,6 +263,18 @@
     <Compile Include="Migrations\202205131153552_GroupsAssigneesAndFixes.designer.cs">
       <DependentUpon>202205131153552_GroupsAssigneesAndFixes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205270844434_UserInGroupIdFix.cs" />
+    <Compile Include="Migrations\202205270844434_UserInGroupIdFix.designer.cs">
+      <DependentUpon>202205270844434_UserInGroupIdFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205270902187_UserIdsToString.cs" />
+    <Compile Include="Migrations\202205270902187_UserIdsToString.designer.cs">
+      <DependentUpon>202205270902187_UserIdsToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205271201300_resultDeleted.cs" />
+    <Compile Include="Migrations\202205271201300_resultDeleted.designer.cs">
+      <DependentUpon>202205271201300_resultDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
@@ -276,9 +289,12 @@
     <Compile Include="Repositories\TestAssignedGroupRepository.cs" />
     <Compile Include="Repositories\TestAssignedUserRepository.cs" />
     <Compile Include="Repositories\TestRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UsersInGroupRepository.cs" />
     <Compile Include="Services\GroupService.cs" />
     <Compile Include="Services\QuestionService.cs" />
     <Compile Include="Services\TestService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,7 +319,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Admin\AddGroup.cshtml" />
     <Content Include="Views\Admin\GroupsPage.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\kek.cshtml" />
@@ -346,6 +361,10 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\Teacher\Tests.cshtml" />
+    <Content Include="Views\Admin\TestsPage.cshtml" />
+    <Content Include="Views\Admin\GroupPage.cshtml" />
+    <Content Include="Views\Errors\Error.cshtml" />
+    <Content Include="Views\Admin\TestPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +397,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205131153552_GroupsAssigneesAndFixes.resx">
       <DependentUpon>202205131153552_GroupsAssigneesAndFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205270844434_UserInGroupIdFix.resx">
+      <DependentUpon>202205270844434_UserInGroupIdFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205270902187_UserIdsToString.resx">
+      <DependentUpon>202205270902187_UserIdsToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271201300_resultDeleted.resx">
+      <DependentUpon>202205271201300_resultDeleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

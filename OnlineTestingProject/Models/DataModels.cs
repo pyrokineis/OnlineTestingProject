@@ -33,35 +33,23 @@ namespace OnlineTestingProject.Models
     public class UserAnswer
     {
         public int UserAnswerId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public Question Question { get; set; }
-        public Test Test;
+        public Test Test { get; set; }
         public string Data { get; set; }
         public AnswerResult Result { get; set; }
     }
-    
-    public class Result
-    {
-        public int ResultId { get; set; }
-        public int UserId { get; set; }
-        public UserAnswer Answer { get; set; }
-        public Test Test { get; set; }
-        public bool IsTrue { get; set; }
-    }
-    
 
     public class Group
     {
         public int GroupId { get; set; }
         public string Name { get; set; }
     }
-
     public class UsersInGroup
     {   public int UsersInGroupId { get; set; }
-        public int UserId { get; set; }
-        public int Group { get; set; }
+        public string UserId { get; set; }
+        public int GroupId { get; set; }
     }
-
     public class Test
     {
         public int TestId { get; set; }
@@ -81,7 +69,7 @@ namespace OnlineTestingProject.Models
     {
         public int TestAssignedUserId { get; set; }
         public Test Test { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
     
 

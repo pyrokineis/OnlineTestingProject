@@ -21,7 +21,7 @@ namespace OnlineTestingProject.Repositories
         }
 
 
-        public TestAssignedGroup Get(int id)
+        public TestAssignedGroup Get(string id)
         {
             return _dbContext.TestAssignedGroups.Find(id);
         }

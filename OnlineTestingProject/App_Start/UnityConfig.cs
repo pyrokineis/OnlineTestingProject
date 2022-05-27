@@ -30,6 +30,11 @@ namespace OnlineTestingProject
             
             
             container.RegisterType<IQuestionService, QuestionService>();
+            container.RegisterType<IGroupService, GroupService>();
+            container.RegisterType<ITestService, TestService>();
+            container.RegisterType<IUserService, UserService>();
+
+
             container.RegisterType<IUnitOfWork, EfUnitOfWork>();
             container.RegisterType(typeof(IUserStore<>), typeof(UserStore<>));
             container.RegisterType<DbContext, ApplicationDbContext>();

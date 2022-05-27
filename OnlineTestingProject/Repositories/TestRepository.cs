@@ -20,10 +20,9 @@ namespace OnlineTestingProject.Repositories
             return _dbContext.Tests.ToList();
         }
 
-
-        public Test Get(int id)
+        public Test Get(string id)
         {
-            return _dbContext.Tests.Find(id);
+            return _dbContext.Tests.Find(Int32.Parse(id));
         }
 
         public void Create(Test qst)

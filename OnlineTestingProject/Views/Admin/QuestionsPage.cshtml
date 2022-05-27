@@ -1,5 +1,5 @@
 ﻿@using OnlineTestingProject.Models
-@model List<Question>
+@model Question
 
 <!DOCTYPE html>
 
@@ -9,8 +9,26 @@
     <title></title>
 </head>
 <body>
+<h2>Создать вопрос</h2>
+@using (Html.BeginForm("AddQuestion", "Admin", FormMethod.Post))
+{
+    <div class="item">
+        <label>Текст вопроса</label>
+        @Html.TextBoxFor(m=>m.Text)
+    </div>
+    <div class="item">
+        <label>Тип вопроса</label>
+        @Html.DropDownList("questionTypeName", (SelectList)ViewBag.qstTypes)
+    </div>
+    <div class="item">
+        <label>Ответ</label>
+        @Html.TextBoxFor(m=>m.AnswerData)
+    </div>
+    <input type="submit" value="Отправить"/>
+}
+<h2>Все вопросы</h2>
     <div>
-           @foreach(var qst in Model)
+           @foreach(Question qst in ViewBag.qstList)
             {
                 <div>
                     @qst.Text

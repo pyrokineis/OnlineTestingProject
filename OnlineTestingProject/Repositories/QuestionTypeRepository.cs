@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Repositories
         }
 
 
-        public QuestionType Get(int id)
+        public QuestionType Get(string id)
         {
             return _dbContext.QuestionTypes.Find(id);
         }

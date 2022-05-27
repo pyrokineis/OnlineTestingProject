@@ -7,7 +7,7 @@ namespace OnlineTestingProject.Interfaces
     public interface IRepository<T> where T : class
     {
         List<T> GetAll();
-        T Get(int id);
+        T Get(string id);
         void Add(T item);
         IEnumerable<T> Find(Func<T, Boolean> predicate);
         void Create(T item);

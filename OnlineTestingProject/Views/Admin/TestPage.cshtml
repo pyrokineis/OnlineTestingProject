@@ -1,0 +1,38 @@
+﻿@using OnlineTestingProject.Models
+@model Test
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>Тест: @Model.Name</h2>
+<br />
+@using (Html.BeginForm("AssignUser", "Admin", FormMethod.Post))
+{
+    @Html.TextBox("userName", "Введите логин пользователя:");
+    @Html.Hidden("testId", @Model.TestId)
+    <input type="submit" value="Добавить пользователя" />
+}
+
+@using (Html.BeginForm("AssignGroup", "Admin", FormMethod.Post))
+{
+    @Html.TextBox("groupName", "Введите название группы:");
+    @Html.Hidden("testId", @Model.TestId)
+    <input type="submit" value="Добавить группу" />
+}
+
+<h2>Группы, которым назначен тест</h2>
+@foreach (Group gr in ViewBag.groupsList)
+{
+    <div>
+        @gr.Name
+    </div>
+}
+<h2>Пользователи, которым назначен тест</h2>
+@foreach (ApplicationUser user in ViewBag.usersList)
+{
+
+    <div>
+        @user.UserName
+    </div>
+}

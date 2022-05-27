@@ -20,9 +20,9 @@ namespace OnlineTestingProject.Repositories
             return _dbContext.Groups.ToList();
         }
         
-        public Group Get(int id)
+        public Group Get(string id)
         {
-            return _dbContext.Groups.Find(id);
+            return _dbContext.Groups.Find(Int32.Parse(id));
         }
 
         public void Create(Group gr)
