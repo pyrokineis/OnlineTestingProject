@@ -33,20 +33,24 @@ namespace OnlineTestingProject.Controllers
         {
             ViewBag.qstList = _questionService.GetQuestions();
 
-            ViewBag.qstTypes = new SelectList(_questionService.GetAllQuestionTypesStrs());
+            ViewBag.qstTypes = new SelectList(_questionService.GetAllQuestionTypes(), "Id", "Name");
             //ViewBag.qstTypes = new SelectList(qstTypesList, "QuestionTypeId", "Name");
             return View();
         }
         
         [HttpPost]
-        public ActionResult AddQuestion(Question qst, string questionTypeName)
+        public ActionResult AddQuestion(Question qst)
         {
-            qst.Type = _questionService.FindQuestionType(questionTypeName);
+            //qst.Type = _questionService.FindQuestionType(questionTypeName);
             _questionService.AddQuestion(qst);
             return RedirectToAction("QuestionsPage");
         }
 
-
+        public ActionResult AddQuestionToTest(Question qst, int testId)
+        {
+            
+            return Redirect(Request.UrlReferrer.ToString());
+        }
         public ActionResult GroupsPage()
         {
             ViewBag.groupsList = _groupService.GetAllGroups(); 
@@ -85,7 +89,7 @@ namespace OnlineTestingProject.Controllers
             _testService.AddTest(new Test
             {
                 Name = ts.Name,
-                Date = System.DateTime.Now,
+                CreationDate = System.DateTime.Now,
             });
             return RedirectToAction("TestsPage");
         }

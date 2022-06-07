@@ -32,7 +32,7 @@ namespace OnlineTestingProject.Services
             _dbContext.UsersInGroups.Add(new UsersInGroup
             {
                 UserId = user.Id,
-                GroupId = gr.GroupId
+                GroupId = gr.Id
             });
         }
         public void AddUserToGroup(ApplicationUser user, int grId)

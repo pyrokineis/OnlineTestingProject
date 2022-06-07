@@ -56,5 +56,10 @@ namespace OnlineTestingProject.Repositories
         {
             _dbContext.SaveChanges();
         }
+
+        public void Attach(Test item)
+        {
+            _dbContext.Tests.Attach(item);
+        }
     }
 }

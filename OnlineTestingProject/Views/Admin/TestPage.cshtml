@@ -10,14 +10,14 @@
 @using (Html.BeginForm("AssignUser", "Admin", FormMethod.Post))
 {
     @Html.TextBox("userName", "Введите логин пользователя:");
-    @Html.Hidden("testId", @Model.TestId)
+    @Html.Hidden("testId", @Model.Id)
     <input type="submit" value="Добавить пользователя" />
 }
 
 @using (Html.BeginForm("AssignGroup", "Admin", FormMethod.Post))
 {
     @Html.TextBox("groupName", "Введите название группы:");
-    @Html.Hidden("testId", @Model.TestId)
+    @Html.Hidden("testId", @Model.Id)
     <input type="submit" value="Добавить группу" />
 }
 
@@ -36,3 +36,5 @@
         @user.UserName
     </div>
 }
+
+<h3>Вопросы в тесте</h3>

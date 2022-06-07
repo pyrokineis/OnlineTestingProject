@@ -13,8 +13,10 @@ namespace OnlineTestingProject.Repositories
         private GroupRepository _groupRepository;
         private TestAssignedGroupRepository _testAssignedGroupRepository;
         private TestAssignedUserRepository _testAssignedUserRepository;
-        private UsersInGroupRepository usersInGroupRepository;
-        private UserRepository userRepository;
+        private UsersInGroupRepository _usersInGroupRepository;
+        private UserRepository _userRepository;
+        private QuestionsInTestsRepository _questionsInTestsRepository;
+        private AnswerOptionRepository _answerOptionRepository;
         public EfUnitOfWork(ApplicationDbContext db)
         {
             _dbContext = db;
@@ -27,8 +29,11 @@ namespace OnlineTestingProject.Repositories
         public IRepository<Group> Groups => _groupRepository ?? (_groupRepository = new GroupRepository(_dbContext));
         public IRepository<TestAssignedGroup> TestAssignedGroups => _testAssignedGroupRepository ?? (_testAssignedGroupRepository = new TestAssignedGroupRepository(_dbContext));
         public IRepository<TestAssignedUser> TestAssignedUsers => _testAssignedUserRepository ?? (_testAssignedUserRepository = new TestAssignedUserRepository(_dbContext));
-        public IRepository<UsersInGroup> UsersInGroups => usersInGroupRepository ?? (usersInGroupRepository = new UsersInGroupRepository(_dbContext));
-        public IRepository<ApplicationUser> Users => userRepository ?? (userRepository = new UserRepository(_dbContext));
+        public IRepository<UsersInGroup> UsersInGroups => _usersInGroupRepository ?? (_usersInGroupRepository = new UsersInGroupRepository(_dbContext));
+        public IRepository<ApplicationUser> Users => _userRepository ?? (_userRepository = new UserRepository(_dbContext));
+        public IRepository<QuestionsInTest> QuestionsInTests => _questionsInTestsRepository ?? (_questionsInTestsRepository = new QuestionsInTestsRepository(_dbContext));
+
+        public IRepository<AnswersOption> AnswersOptions  => _answerOptionRepository ?? (_answerOptionRepository = new AnswerOptionRepository(_dbContext));
 
         //public IRepository<Question> Questions
         //{

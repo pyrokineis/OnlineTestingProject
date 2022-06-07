@@ -1,7 +1,22 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@using OnlineTestingProject.Models
+@model List<Test>
+    @{
+        ViewBag.Title = "Index";
+    }
 
-<h2>Index</h2>
+    <h3>Страница студента</h3>
+    <hr />
+    <h2>Мои тесты</h2>
+    <h1>Назначенные</h1>
 
+    @foreach (Test test in Model)
+    {
+
+        <div>
+            @test.Name 
+        </div>
+        @Html.ActionLink("Открыть тест", "TestPage", "Student", new { id = test.Id }, null);
+    }
+
+    <hr />
+    <h1>Завершенные</h1>

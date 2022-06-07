@@ -8,7 +8,7 @@ namespace OnlineTestingProject.Controllers
 {
     public class TeacherController : Controller
     {
-        [Authorize(Roles = "Teacher, Admin")]
+        [Authorize(Roles = "Teacher")]
         // GET: Teacher
         public ActionResult Index()
         {

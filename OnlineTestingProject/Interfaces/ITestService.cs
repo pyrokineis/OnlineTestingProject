@@ -17,5 +17,9 @@ namespace OnlineTestingProject.Interfaces
         void AssignGroupForTest(Group gr, Test test);
         void DeasignUserFromTest(ApplicationUser user, Test test);
         void DeasignGroupFromTest(Group gr, Test test);
+        void AddQuestionToTest(Test test, Question qst);
+        List<Question> getQuestionsInTest(Test test);
+        List<Test> GetTestsAssignedDirectlyToUser(string userId);
+        List<Test> GetTestsAssignedToUsersGroups(List<Group> userGroups);
     }
 }

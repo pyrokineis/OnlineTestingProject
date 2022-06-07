@@ -12,5 +12,6 @@ namespace OnlineTestingProject.Interfaces
         List<ApplicationUser> GetUsersInGroup(int id);
         Group GetGroup(int id);
         Group GetGroupByName(string name);
+        List<Group> GetUserGroups(string userId);
     }
 }

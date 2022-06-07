@@ -13,6 +13,8 @@ namespace OnlineTestingProject.Interfaces
         IRepository<TestAssignedUser> TestAssignedUsers {get;}
         IRepository<UsersInGroup> UsersInGroups { get; }
         IRepository<ApplicationUser> Users { get; }
+        IRepository<QuestionsInTest> QuestionsInTests { get; }
+        IRepository<AnswersOption> AnswersOptions { get; }
         void Save();
     }
 }

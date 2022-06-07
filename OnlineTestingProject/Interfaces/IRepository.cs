@@ -13,6 +13,7 @@ namespace OnlineTestingProject.Interfaces
         void Create(T item);
         void Update(T item);
         void Delete(int id);
+        void Attach(T item);
         void Save();
     }
 }

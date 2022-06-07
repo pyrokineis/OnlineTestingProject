@@ -43,5 +43,18 @@ namespace OnlineTestingProject.Services
             _dbContext.Groups.Add(gr);
             _dbContext.Save();
         }
+
+        public List<Group> GetUserGroups(string userId)
+        {
+            var list = _dbContext.UsersInGroups.Find(r=>r.UserId==userId);
+            List<Group> list2 = new List<Group>();
+
+
+            foreach (var obj in list)
+            {
+                list2.Add(_dbContext.Groups.Get(obj.GroupId.ToString()));
+            }
+            return list2;
+        }
     }
 }

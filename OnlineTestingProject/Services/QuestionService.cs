@@ -24,6 +24,7 @@ namespace OnlineTestingProject.Services
         }
         public void AddQuestion(Question qst)
         {
+            _dbContext.QuestionTypes.Attach(qst.Type);
             _dbContext.Questions.Add(qst);
             _dbContext.Questions.Save();
         }
