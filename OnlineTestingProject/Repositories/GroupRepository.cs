@@ -45,6 +45,8 @@ namespace OnlineTestingProject.Repositories
             Group gr = _dbContext.Groups.Find(id);
             if (gr != null)
                 _dbContext.Groups.Remove(gr);
+            _dbContext.UsersInGroups.RemoveRange(_dbContext.UsersInGroups.Where(x => x.GroupId == id));
+            _dbContext.TestAssignedGroups.RemoveRange(_dbContext.TestAssignedGroups.Where(x => x.GroupId == id));
         }
 
         public void Add(Group gr)

@@ -32,6 +32,7 @@
                 @test.Name
             </div>
             @Html.ActionLink("Открыть тест", "TestPage", "Admin", new { id = test.Id }, null);
+            @Html.ActionLink("Удалить тест", "DeleteTest", "Admin", new { id = test.Id }, null);
         }
     </div>
 </body>

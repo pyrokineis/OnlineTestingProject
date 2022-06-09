@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Repositories
 
         public TestAssignedUser Get(string id)
         {
-            return _dbContext.TestAssignedUsers.Find(id);
+            return _dbContext.TestAssignedUsers.Find(Int32.Parse(id));
         }
 
         public void Create(TestAssignedUser qst)

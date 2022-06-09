@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Repositories
 
         public Question Get(string id)
         {
-            return _dbContext.Questions.Find(id);
+            return _dbContext.Questions.Find(Int32.Parse(id));
         }
 
         public void Create(Question qst)

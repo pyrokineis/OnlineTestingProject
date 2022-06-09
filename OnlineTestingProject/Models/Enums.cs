@@ -8,6 +8,11 @@
 
     }
 
+    public enum QuestionTypes
+    {
+
+    }
+
     public enum TestStatus
     {
         NotStarted,

@@ -12,7 +12,7 @@ namespace OnlineTestingProject.Models
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public QuestionType Type { get; set; }
+        public int TypeId { get; set; }
         public QuestionsTheme Theme { get; set; }
         public string AnswerData { get; set; }
 
@@ -22,7 +22,7 @@ namespace OnlineTestingProject.Models
     {
         public int Id { get; set; }
         public Test Test { get; set; }
-        public Question Question { get; set; }
+        public int QuestionId { get; set; }
     }
     
     public class QuestionType
@@ -59,14 +59,14 @@ namespace OnlineTestingProject.Models
         public DateTime CreationDate { get; set; }
         public DateTime Deadline { get; set; }
         public DateTime FinishDate { get; set; }
-        public ApplicationUser Creator { get; set; }
+        public string CreatorLogin { get; set; }
         public  TestTheme Theme { get; set; }
     }
 
     public class AnswersOption
     {
         public int Id { get; set; }
-        public Question Question { get; set; }
+        public int QuestionId { get; set; }
         public string Text { get; set; }
     }
 

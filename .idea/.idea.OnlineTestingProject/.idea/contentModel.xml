@@ -92,6 +92,18 @@
           <e p="202206071518586_enumsUpd.cs" t="Include" />
           <e p="202206071518586_enumsUpd.designer.cs" t="Include" />
           <e p="202206071518586_enumsUpd.resx" t="Include" />
+          <e p="202206072036078_TestCreatorFromUserToString.cs" t="Include" />
+          <e p="202206072036078_TestCreatorFromUserToString.designer.cs" t="Include" />
+          <e p="202206072036078_TestCreatorFromUserToString.resx" t="Include" />
+          <e p="202206091027092_QuestionInTestEntityToInt.cs" t="Include" />
+          <e p="202206091027092_QuestionInTestEntityToInt.designer.cs" t="Include" />
+          <e p="202206091027092_QuestionInTestEntityToInt.resx" t="Include" />
+          <e p="202206091136336_QuestionTypeToInt.cs" t="Include" />
+          <e p="202206091136336_QuestionTypeToInt.designer.cs" t="Include" />
+          <e p="202206091136336_QuestionTypeToInt.resx" t="Include" />
+          <e p="202206091146310_AnswerOption_Question_ToInt.cs" t="Include" />
+          <e p="202206091146310_AnswerOption_Question_ToInt.designer.cs" t="Include" />
+          <e p="202206091146310_AnswerOption_Question_ToInt.resx" t="Include" />
           <e p="Configuration.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

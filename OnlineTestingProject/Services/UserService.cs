@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
+using System.Web.Security;
 
 namespace OnlineTestingProject.Services
 {
@@ -27,6 +28,10 @@ namespace OnlineTestingProject.Services
            return _dbContext.Users.GetAll();
         }
 
+        public ApplicationUser GetCurrentUser(HttpContext context)
+        {
+            return GetUserById(context.User.Identity.GetUserId());
+        }
         public void AddUserToGroup(ApplicationUser user, Group gr)
         {
             _dbContext.UsersInGroups.Add(new UsersInGroup

@@ -25,7 +25,7 @@ namespace OnlineTestingProject.Repositories
 
         public QuestionType Get(string id)
         {
-            return _dbContext.QuestionTypes.Find(id);
+            return _dbContext.QuestionTypes.Find(Int32.Parse(id));
         }
 
         public void Create(QuestionType qst)

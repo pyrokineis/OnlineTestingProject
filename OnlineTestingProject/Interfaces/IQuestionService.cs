@@ -7,6 +7,7 @@ namespace OnlineTestingProject.Interfaces
     public interface IQuestionService
     {
         void AddQuestion(Question qst);
+        void DeleteQuestion(int id);
         List<Question> GetQuestions();
         Question GetQuestion(int id);
         List<QuestionType> GetAllQuestionTypes();

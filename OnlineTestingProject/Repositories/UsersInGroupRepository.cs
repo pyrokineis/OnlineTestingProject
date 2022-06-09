@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Repositories
 
         public UsersInGroup Get(string id)
         {
-            return _dbContext.UsersInGroups.Find(id);
+            return _dbContext.UsersInGroups.Find(Int32.Parse(id));
         }
 
         public void Create(UsersInGroup qst)

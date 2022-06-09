@@ -15,13 +15,25 @@ namespace OnlineTestingProject.Services
         {
             _dbContext = uoW;
         }
-        private readonly IGroupService _groupService;
+
+        IQuestionService questionService;
         public void AddTest(Test test)
         {
+
+            test.CreationDate = DateTime.Now;
+            test.FinishDate = DateTime.Now;
+            test.Deadline = DateTime.Now;
+            test.Status = Models.Enums.TestStatus.NotStarted;
+
             _dbContext.Tests.Add(test);
             _dbContext.Tests.Save();
         }
 
+        public void DeleteTest(int id)
+        {
+            _dbContext.Tests.Delete(id);
+            _dbContext.Save();
+        }
         public List<Test> GetAllTests()
         {
             return _dbContext.Tests.GetAll();
@@ -93,24 +105,63 @@ namespace OnlineTestingProject.Services
 
         public void DeasignGroupFromTest(Group gr, Test test)
         {
-            throw new NotImplementedException();
+            var list = _dbContext.TestAssignedGroups.Find(r => r.GroupId == gr.Id && r.TestId == test.Id);
+
+            if (list == null)
+                return;
+
+            foreach (var item in list)
+                _dbContext.TestAssignedGroups.Delete(item.Id);
+
+            _dbContext.TestAssignedGroups.Save();
         }
 
         public void AddQuestionToTest(Test test, Question qst)
         {
-            throw new NotImplementedException();
+            var _qst = _dbContext.Questions.Find(x => x.Text == qst.Text && x.Text == qst.Text).FirstOrDefault();
+            if (_qst != null)
+            {
+                _dbContext.Questions.Attach(_qst);
+                _dbContext.QuestionsInTests.Add(new QuestionsInTest
+                {
+                    QuestionId = _qst.Id,
+                    Test = test
+                });
+
+            }
+
+            else
+            {
+                _dbContext.Questions.Add(qst);
+                _dbContext.Save();
+
+                _dbContext.Questions.Attach(qst);
+                _dbContext.QuestionsInTests.Add(new QuestionsInTest
+                {
+                    QuestionId = qst.Id,
+                    Test = test
+                });
+
+            }
+
+
+            _dbContext.Save();
         }
 
         public List<Question> GetQuestionsInTest(Test test)
         {
-            var list = _dbContext.QuestionsInTests.GetAll();
+            var list = _dbContext.QuestionsInTests.GetAll().Where(x => x.Test.Id == test.Id);
+            var list3 = _dbContext.QuestionsInTests.GetAll();
+            Question qst;
             List<Question> list2 = new List<Question>();
 
-            foreach (var item in list)
-                list2.Add(_dbContext.Questions.Get(item.Question.Id.ToString()));
-
+            foreach (var obj in list)
+            {
+                _dbContext.QuestionsInTests.Attach(obj);
+                qst = _dbContext.Questions.Get(obj.QuestionId.ToString());
+                list2.Add(qst);
+            }
             return list2;
-
         }
 
         public List<Test> GetTestsAssignedDirectlyToUser(string userId)
@@ -140,11 +191,11 @@ namespace OnlineTestingProject.Services
             return list2;
         }
 
-        public List<Question> getQuestionsInTest(Test test)
+
+        public void Update(Test test)
         {
-            throw new NotImplementedException();
+            _dbContext.Tests.Update(test);
+            _dbContext.Save();
         }
-
-
     }
 }

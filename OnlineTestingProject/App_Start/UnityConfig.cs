@@ -33,6 +33,7 @@ namespace OnlineTestingProject
             container.RegisterType<IGroupService, GroupService>();
             container.RegisterType<ITestService, TestService>();
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IAnswerService, AnswerService>();
 
 
             container.RegisterType<IUnitOfWork, EfUnitOfWork>();

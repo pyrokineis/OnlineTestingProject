@@ -1,23 +1,25 @@
 ﻿@using OnlineTestingProject.Models
-@model Test
+@model Question
 
 @{
-    ViewBag.Title = Model.Name;
+    Test test = ViewBag.test;
+    ViewBag.Title = test.Name;
 }
 
-<h2>Тест: @Model.Name</h2>
+<h2>Тест: @test.Name</h2>
 <br />
 @using (Html.BeginForm("AssignUser", "Admin", FormMethod.Post))
 {
+
     @Html.TextBox("userName", "Введите логин пользователя:");
-    @Html.Hidden("testId", @Model.Id)
+    @Html.Hidden("testId", test.Id)
     <input type="submit" value="Добавить пользователя" />
 }
 
 @using (Html.BeginForm("AssignGroup", "Admin", FormMethod.Post))
 {
     @Html.TextBox("groupName", "Введите название группы:");
-    @Html.Hidden("testId", @Model.Id)
+    @Html.Hidden("testId", test.Id)
     <input type="submit" value="Добавить группу" />
 }
 
@@ -37,4 +39,65 @@
     </div>
 }
 
-<h3>Вопросы в тесте</h3>
+
+<h3>Добавить вопрос</h3>
+
+<hr />
+@using (Html.BeginForm("AddQuestionToTest", "Admin", FormMethod.Post))
+{
+    @Html.Hidden("testId", test.Id)
+    <div class="item">
+        <label>Текст вопроса</label>
+        @Html.TextBoxFor(m => m.Text)
+    </div>
+    <div>
+        <div class="item">
+            <label>Тип вопроса</label>
+            @*@Html.DropDownList("questionTypeName", (SelectList)ViewBag.qstTypes)*@
+            @Html.DropDownListFor(model => model.TypeId, (IEnumerable<SelectListItem>)ViewBag.qstTypes)
+
+        </div>
+    </div>
+    <div class="item">
+        <label>Ответ</label>
+        @Html.TextBoxFor(m => m.AnswerData)
+
+    </div>
+    <input type="submit" value="Отправить" />
+}
+
+<h2>Вопросы в тесте</h2>
+
+@{
+    int i = 1;
+}
+@foreach (Question qst in ViewBag.qstList)
+{
+
+    <div>
+
+        <b>@i  @qst.Text</b>
+    </div>
+    foreach (AnswersOption opt in ViewBag.QstOptions)
+    {
+        if (opt.QuestionId == qst.Id)
+        {
+            if (qst.TypeId==1)
+            {
+                <p>тыц</p>
+                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text );
+            }
+        }
+    }
+
+    using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
+    {
+        <div class="item">
+            <label>Текст варианта ответа</label>
+            @Html.TextBox("text", "Введите текст варианта ответа:");
+            @Html.Hidden("qstId", qst.Id)
+        </div>
+
+        <input type="submit" value="Добавить" />
+    }
+}

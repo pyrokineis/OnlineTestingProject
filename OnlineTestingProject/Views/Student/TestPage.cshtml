@@ -8,6 +8,68 @@
 <h2>Тест: @Model.Name</h2>
 <br />
 
-@{ 
-//if (Model.Status=="")
+@{
+    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
+    {
+        <h1>Тест завершен</h1>
+        <b>Время создания: </b>
+        <b>@Model.CreationDate</b>
+
+        <b>Время завершения: </b>
+        <b>@Model.FinishDate</b>
+
+        <b>Создатель теста: </b>
+        <b>@Model.CreatorLogin</b>
+
+    }
+
+
+
+    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.NotStarted)
+    {
+        <h1>Тест не начат</h1>
+        <b>Время создания: </b>
+        <b>@Model.CreationDate</b>
+
+        <b>Создатель теста: </b>
+        <b>@Model.CreatorLogin</b>
+        using (Html.BeginForm("TestPage", "Student", FormMethod.Post))
+        {
+            @*@Model.Status = OnlineTestingProject.Models.Enums.TestStatus.InProgress;*@
+            @Html.Hidden("id", @Model.Id)
+            @Html.Hidden("isStarted", true)
+            <input type="submit" value="Начать тест" />
+        }
+    }
+
+
+    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.InProgress)
+    {
+        int i = 1;
+        <h1>работаем</h1>
+        foreach (Question qst in ViewBag.Qstns)
+        {
+<div>
+    @{
+        <b>Ваааапрос номер @i</b>
+        <p>@qst.Text</p>
+        foreach (AnswersOption opt in ViewBag.QstOptions)
+        {
+            if (opt.QuestionId == qst.Id)
+            {
+                if (qst.TypeId == 1)
+                {
+                    <p>тыц</p>
+                    @Html.RadioButton(opt.QuestionId.ToString(), opt.Text);
+                }
+
+            }
+        }
+
+    }
+    <hr />
+</div>
+                        i++;
+        }
+    }
 }

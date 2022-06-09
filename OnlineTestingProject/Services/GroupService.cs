@@ -44,6 +44,12 @@ namespace OnlineTestingProject.Services
             _dbContext.Save();
         }
 
+        public void DeleteGroup(int id)
+        {
+            _dbContext.Groups.Delete(id);
+            _dbContext.Save();
+        }
+
         public List<Group> GetUserGroups(string userId)
         {
             var list = _dbContext.UsersInGroups.Find(r=>r.UserId==userId);

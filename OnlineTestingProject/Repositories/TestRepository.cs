@@ -45,10 +45,14 @@ namespace OnlineTestingProject.Repositories
             Test test = _dbContext.Tests.Find(id);
             if (test != null)
                 _dbContext.Tests.Remove(test);
+            _dbContext.TestAssignedUsers.RemoveRange(_dbContext.TestAssignedUsers.Where(x => x.TestId == id));
+            _dbContext.TestAssignedGroups.RemoveRange(_dbContext.TestAssignedGroups.Where(x => x.TestId == id));
+
         }
 
         public void Add(Test item)
         {
+
             _dbContext.Tests.Add(item);
         }
 

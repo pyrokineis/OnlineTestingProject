@@ -13,5 +13,6 @@ namespace OnlineTestingProject.Interfaces
         Group GetGroup(int id);
         Group GetGroupByName(string name);
         List<Group> GetUserGroups(string userId);
+        void DeleteGroup(int id);
     }
 }

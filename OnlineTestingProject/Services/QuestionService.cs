@@ -18,15 +18,26 @@ namespace OnlineTestingProject.Services
         {
             return _dbContext.Questions.Get(id.ToString());
         }
+
+        public Question GetQuestionByName(string text)
+        {
+            return _dbContext.Questions.Find(x=>x.Text==text).FirstOrDefault();
+        }
+
         public List<Question> GetQuestions()
         {
             return _dbContext.Questions.GetAll();
         }
         public void AddQuestion(Question qst)
         {
-            _dbContext.QuestionTypes.Attach(qst.Type);
             _dbContext.Questions.Add(qst);
             _dbContext.Questions.Save();
+        }
+
+        public void DeleteQuestion(int id)
+        {
+            _dbContext.Questions.Delete(id);
+            _dbContext.Save();
         }
 
         public QuestionType GetQuestionType(int id)

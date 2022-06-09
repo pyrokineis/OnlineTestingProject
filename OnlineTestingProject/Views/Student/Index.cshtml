@@ -1,22 +1,57 @@
 ﻿@using OnlineTestingProject.Models
 @model List<Test>
-    @{
-        ViewBag.Title = "Index";
-    }
+@{
+    ViewBag.Title = "Index";
+}
 
-    <h3>Страница студента</h3>
-    <hr />
-    <h2>Мои тесты</h2>
-    <h1>Назначенные</h1>
+<h3>Страница студента</h3>
+<hr />
+<h2>Мои тесты</h2>
+<h1>Назначенные</h1>
 
-    @foreach (Test test in Model)
+@{
+    if (Model.First() != null)
     {
+        foreach (Test test in Model)
+        {
+            if (test.Status != OnlineTestingProject.Models.Enums.TestStatus.Finished)
+            {
+                <div>
+                    @test.Name
+                </div>
+                @Html.ActionLink("Открыть тест", "TestPage", "Student", new { id = test.Id }, null);
+            }
 
-        <div>
-            @test.Name 
-        </div>
-        @Html.ActionLink("Открыть тест", "TestPage", "Student", new { id = test.Id }, null);
+        }
+    }
+    else
+    {
+        <b>Нет назначенных тестов</b>
     }
 
-    <hr />
-    <h1>Завершенные</h1>
+}
+
+
+<hr />
+<h1>Завершенные</h1>
+@{
+    if (Model.First() != null)
+    {
+        foreach (Test test in Model)
+        {
+            if (test.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
+            {
+                <div>
+                    @test.Name
+                </div>
+                @Html.ActionLink("Открыть тест", "TestPage", "Student", new { id = test.Id }, null);
+            }
+
+        }
+    }
+    else
+    {
+        <b>Нет завершенных тестов</b>
+    }
+
+}

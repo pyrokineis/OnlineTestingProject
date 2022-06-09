@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace OnlineTestingProject.Interfaces
 {
@@ -15,5 +16,6 @@ namespace OnlineTestingProject.Interfaces
         ApplicationUser GetUserByFullName(string line);
         void AddUserToGroup(ApplicationUser user, Group gr);
         void AddUserToGroup(ApplicationUser user, int grId);
+        ApplicationUser GetCurrentUser(HttpContext context);
     }
 }

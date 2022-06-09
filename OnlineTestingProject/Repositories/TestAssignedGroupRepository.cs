@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Repositories
 
         public TestAssignedGroup Get(string id)
         {
-            return _dbContext.TestAssignedGroups.Find(id);
+            return _dbContext.TestAssignedGroups.Find(Int32.Parse(id));
         }
 
         public void Create(TestAssignedGroup qst)

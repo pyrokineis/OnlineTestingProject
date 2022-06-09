@@ -291,6 +291,22 @@
     <Compile Include="Migrations\202206071518586_enumsUpd.designer.cs">
       <DependentUpon>202206071518586_enumsUpd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206072036078_TestCreatorFromUserToString.cs" />
+    <Compile Include="Migrations\202206072036078_TestCreatorFromUserToString.designer.cs">
+      <DependentUpon>202206072036078_TestCreatorFromUserToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206091027092_QuestionInTestEntityToInt.cs" />
+    <Compile Include="Migrations\202206091027092_QuestionInTestEntityToInt.designer.cs">
+      <DependentUpon>202206091027092_QuestionInTestEntityToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206091136336_QuestionTypeToInt.cs" />
+    <Compile Include="Migrations\202206091136336_QuestionTypeToInt.designer.cs">
+      <DependentUpon>202206091136336_QuestionTypeToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206091146310_AnswerOption_Question_ToInt.cs" />
+    <Compile Include="Migrations\202206091146310_AnswerOption_Question_ToInt.designer.cs">
+      <DependentUpon>202206091146310_AnswerOption_Question_ToInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
@@ -439,6 +455,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206071518586_enumsUpd.resx">
       <DependentUpon>202206071518586_enumsUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206072036078_TestCreatorFromUserToString.resx">
+      <DependentUpon>202206072036078_TestCreatorFromUserToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206091027092_QuestionInTestEntityToInt.resx">
+      <DependentUpon>202206091027092_QuestionInTestEntityToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206091136336_QuestionTypeToInt.resx">
+      <DependentUpon>202206091136336_QuestionTypeToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206091146310_AnswerOption_Question_ToInt.resx">
+      <DependentUpon>202206091146310_AnswerOption_Question_ToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
