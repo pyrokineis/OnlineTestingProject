@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using OnlineTestingProject.Interfaces;
 using OnlineTestingProject.Models;
+using OnlineTestingProject.Models.Enums;
 
 namespace OnlineTestingProject.Controllers
 {
@@ -50,28 +51,61 @@ namespace OnlineTestingProject.Controllers
 
         public ActionResult TestPage(int id, bool? isStarted)
         {
+            var test = _testService.GetTest(id);        //get test by Id
 
-            var test = _testService.GetTest(id); //get test by Id
-            var qsts = _testService.GetQuestionsInTest(test);   // get all questions in test
-            if (isStarted==null)
-            {
-                ViewBag.Qstns = qsts;
+            TestVM testVM = new TestVM(test);
 
-                return View(test);
-            }
-
-            if (isStarted==true)
-                test.Status = Models.Enums.TestStatus.InProgress;
-            _testService.Update(test);
-
+            var qsts = _testService.GetQuestionsInTest(test);            // get all questions in test
+            var qstsOpts = _answerService.GetAnswersOptions(qsts);           //get all answer options for every question
 
             ViewBag.Qstns = qsts;
+            ViewBag.QstOptions = qstsOpts;  //get all answer options for every question
 
-            ViewBag.QstOptions = _answerService.GetAnswersOptions(qsts);  //get all answer options for every question
+            string[] mas;
+            foreach (Question qst in qsts)
+            {
+                mas = _answerService.GetAnswerOptionsStrings(qst);
+                testVM.Add(qst, mas);
+            }
 
 
-            return View(test);
 
+            if (isStarted == null)
+                return View(testVM);
+            
+
+            if (isStarted==true)
+            {
+                test.Status = TestStatus.InProgress;
+                _testService.Update(test);
+            }
+
+            return View(testVM);
+
+        }
+
+        public ActionResult TestSubmit(TestVM testVM, int testId)
+        {
+            var userId = User.Identity.GetUserId();
+
+            var answers = testVM.Answers;
+
+            var test = _testService.GetTest(testId);
+            var questionsInTest = _testService.GetQuestionsInTest(test);
+
+
+            Question question;
+
+            AnswerResult res;
+
+            foreach (KeyValuePair<string, string> entry in answers)
+            {
+                question = _questionService.GetQuestion(Int32.Parse(entry.Key));
+                res = _answerService.CompareAnswer(question, test, userId, entry.Value);
+                _answerService.AddUserAnswer(question, test, entry.Value, userId, res);
+            }
+
+            return Redirect(Request.UrlReferrer.ToString());
         }
     }
 }

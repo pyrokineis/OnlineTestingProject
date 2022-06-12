@@ -134,8 +134,16 @@ namespace OnlineTestingProject.Services
             {
                 _dbContext.Questions.Add(qst);
                 _dbContext.Save();
-
                 _dbContext.Questions.Attach(qst);
+
+                if (qst.TypeId == 3)
+                    _dbContext.AnswersOptions.Add(new AnswersOption
+                    {
+                        QuestionId = qst.Id,
+                        Text = qst.AnswerData
+                    });
+
+
                 _dbContext.QuestionsInTests.Add(new QuestionsInTest
                 {
                     QuestionId = qst.Id,

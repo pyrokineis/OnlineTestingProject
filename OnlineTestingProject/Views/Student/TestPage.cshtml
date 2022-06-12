@@ -1,75 +1,177 @@
 ﻿@using OnlineTestingProject.Models
-@model Test
+@model TestVM
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = Model.Test.Name;
 }
 
-<h2>Тест: @Model.Name</h2>
+<h2>Тест: @Model.Test.Name</h2>
 <br />
 
 @{
-    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
+    if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
     {
         <h1>Тест завершен</h1>
         <b>Время создания: </b>
-        <b>@Model.CreationDate</b>
+        <b>@Model.Test.CreationDate</b>
 
         <b>Время завершения: </b>
-        <b>@Model.FinishDate</b>
+        <b>@Model.Test.FinishDate</b>
 
         <b>Создатель теста: </b>
-        <b>@Model.CreatorLogin</b>
+        <b>@Model.Test.CreatorLogin</b>
 
     }
 
 
 
-    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.NotStarted)
+    if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.NotStarted)
     {
         <h1>Тест не начат</h1>
         <b>Время создания: </b>
-        <b>@Model.CreationDate</b>
+        <b>@Model.Test.CreationDate</b>
 
         <b>Создатель теста: </b>
-        <b>@Model.CreatorLogin</b>
+        <b>@Model.Test.CreatorLogin</b>
         using (Html.BeginForm("TestPage", "Student", FormMethod.Post))
         {
             @*@Model.Status = OnlineTestingProject.Models.Enums.TestStatus.InProgress;*@
-            @Html.Hidden("id", @Model.Id)
+            @Html.Hidden("id", @Model.Test.Id)
             @Html.Hidden("isStarted", true)
             <input type="submit" value="Начать тест" />
         }
     }
 
 
-    if (Model.Status == OnlineTestingProject.Models.Enums.TestStatus.InProgress)
+    if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.InProgress)
     {
-        int i = 1;
+        int k = 1;
         <h1>работаем</h1>
-        foreach (Question qst in ViewBag.Qstns)
+        @*foreach (Question qst in ViewBag.Qstns)
         {
-<div>
-    @{
-        <b>Ваааапрос номер @i</b>
-        <p>@qst.Text</p>
-        foreach (AnswersOption opt in ViewBag.QstOptions)
-        {
-            if (opt.QuestionId == qst.Id)
-            {
-                if (qst.TypeId == 1)
-                {
-                    <p>тыц</p>
-                    @Html.RadioButton(opt.QuestionId.ToString(), opt.Text);
+            <div>
+                @{
+                    <b>Ваааапрос номер @k</b>
+                    <p>@qst.Text</p>
+                    foreach (AnswersOption opt in ViewBag.QstOptions)
+                    {
+                        if (opt.QuestionId == qst.Id)
+                        {
+                            if (qst.TypeId == 1)
+                            {
+                                <p>тыц</p>
+                                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text);
+                            }
+
+                        }
+                    }
+
                 }
+                <hr />
+            </div>
+            k++;
+        }*@
+
+
+        <b>АААААААААААААААААААААААААААА</b>
+        using (Html.BeginForm("TestSubmit", "Student", FormMethod.Post))
+        {
+            <table class="table table-bordered table-striped">
+                @for (int i = 0; i < Model.QuestionsAndOptions.Count; i++)
+                {
+                    var question = Model.QuestionsAndOptions[i];
+                    <tr>
+                        <td>
+                            <b>@question.Key.Text</b>
+                            @if (question.Key.TypeId == 1)
+                            {
+                                foreach (var answer in question.Value)
+                                {
+                                    <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                                    <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                                    <input type="hidden" name="testId" value="@Model.Test.Id" />
+                                    @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value", answer, false) @answer
+                                }
+
+                            }
+                            @if (question.Key.TypeId == 2)
+                            {
+                                foreach (var answer in question.Value)
+                                {
+                                    <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                                    <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                                    <input type="hidden" name="testId" value="@Model.Test.Id" />
+                                    @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value", answer) @answer
+                                    @Html.CheckBoxFor(m=>m.Answers[question.Key.Id.ToString()], new { value = answer})
+                                }
+
+                            }
+                            @if (question.Key.TypeId == 3)
+                            {
+                                foreach (var answer in question.Value)
+                                {
+                                    <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                                    <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                                    <input type="hidden" name="testId" value="@Model.Test.Id" />
+                                    @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value")
+                                }
+
+                            }
+                            @if (question.Key.TypeId == 10)
+                            {
+                                foreach (var answer in question.Value)
+                                {
+                                    <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                                    <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                                    <input type="hidden" name="testId" value="@Model.Test.Id" />
+                                    <b>хызы пока</b>
+                                }
+
+                            }
+
+                            @*@foreach (var answer in question.Value)
+        {
+            if (question.Key.TypeId == 1)  /*single*/
+            {
+                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                <input type="hidden" name="testId" value="@Model.Test.Id" />
+                @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value", answer, false) @answer
+            }
+
+            if (question.Key.TypeId == 2)   /*multiple*/
+            {
+                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                <input type="hidden" name="testId" value="@Model.Test.Id" />
+                @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value", answer) @answer
 
             }
-        }
+            if (question.Key.TypeId == 3)  /*text*/
+            {
+                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                <input type="hidden" name="testId" value="@Model.Test.Id" />
+                @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value")
+            }
+            if (question.Key.TypeId == 10)   /*compare*/
+            {
+                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
+                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
+                <input type="hidden" name="testId" value="@Model.Test.Id" />
+                <b>хызы пока</b>
+            }
 
-    }
-    <hr />
-</div>
-                        i++;
+        }*@
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </td>
+                </tr>
+            </table>
         }
     }
 }

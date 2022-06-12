@@ -112,6 +112,7 @@
           <e p="Enums.cs" t="Include" />
           <e p="IdentityModels.cs" t="Include" />
           <e p="ManageViewModels.cs" t="Include" />
+          <e p="ViewModels.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="OnlineTestingProject.csproj" t="IncludeRecursive" />
@@ -129,6 +130,7 @@
           <e p="TestAssignedGroupRepository.cs" t="Include" />
           <e p="TestAssignedUserRepository.cs" t="Include" />
           <e p="TestRepository.cs" t="Include" />
+          <e p="UserAnswerRepository.cs" t="Include" />
           <e p="UserRepository.cs" t="Include" />
           <e p="UsersInGroupRepository.cs" t="Include" />
         </e>

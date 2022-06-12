@@ -82,22 +82,72 @@
     {
         if (opt.QuestionId == qst.Id)
         {
-            if (qst.TypeId==1)
+            if (qst.TypeId == 1)   /*single*/
             {
-                <p>тыц</p>
-                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text );
+                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text) @opt.Text
             }
+
+            if (qst.TypeId == 2)  /*multiple*/
+            {
+                @Html.CheckBox(opt.QuestionId.ToString(), opt.Text) @opt.Text
+                <br />
+            }
+
+            if (qst.TypeId == 3)  /*Text*/
+            {
+                <b>без варинтов ежжи</b>
+            }
+
+            if (qst.TypeId == 10)  /*compare*/
+            {
+                <b>хз пока</b>
+
+            }
+
+        }
+
+
+    }
+    if (qst.TypeId == 1)   /*single*/
+    {
+        using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
+        {
+            <div class="item">
+                <label>Текст варианта ответа</label>
+                @Html.TextBox("text", "Введите текст варианта ответа:");
+                @Html.Hidden("qstId", qst.Id)
+            </div>
+
+            <input type="submit" value="Добавить" />
         }
     }
 
-    using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
+    if (qst.TypeId == 2)  /*multiple*/
     {
-        <div class="item">
-            <label>Текст варианта ответа</label>
-            @Html.TextBox("text", "Введите текст варианта ответа:");
-            @Html.Hidden("qstId", qst.Id)
-        </div>
+        using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
+        {
+            <div class="item">
+                <label>Текст варианта ответа</label>
+                @Html.TextBox("text", "Введите текст варианта ответа:");
+                @Html.Hidden("qstId", qst.Id)
+            </div>
 
-        <input type="submit" value="Добавить" />
+            <input type="submit" value="Добавить" />
+        }
     }
+
+    if (qst.TypeId == 3)  /*Text*/
+    {
+
+    }
+
+    if (qst.TypeId == 10)  /*compare*/
+    {
+        <b>хз пока</b>
+
+    }
+    i++;
+    <hr />
+
+
 }

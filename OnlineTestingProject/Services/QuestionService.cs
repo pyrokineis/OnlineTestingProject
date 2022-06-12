@@ -30,6 +30,11 @@ namespace OnlineTestingProject.Services
         }
         public void AddQuestion(Question qst)
         {
+            if (qst.TypeId == 3)
+                _dbContext.AnswersOptions.Add(new AnswersOption {
+                QuestionId = qst.Id,
+                Text = qst.AnswerData
+                });
             _dbContext.Questions.Add(qst);
             _dbContext.Questions.Save();
         }
