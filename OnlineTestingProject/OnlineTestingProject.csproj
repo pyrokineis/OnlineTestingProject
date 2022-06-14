@@ -307,6 +307,10 @@
     <Compile Include="Migrations\202206091146310_AnswerOption_Question_ToInt.designer.cs">
       <DependentUpon>202206091146310_AnswerOption_Question_ToInt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206141332028_TestUpdated_TestResultAdded.cs" />
+    <Compile Include="Migrations\202206141332028_TestUpdated_TestResultAdded.designer.cs">
+      <DependentUpon>202206141332028_TestUpdated_TestResultAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
@@ -404,6 +408,10 @@
     <Content Include="Views\Errors\Error.cshtml" />
     <Content Include="Views\Admin\TestPage.cshtml" />
     <Content Include="Views\Student\TestPage.cshtml" />
+    <Content Include="Views\Teacher\TestPage.cshtml" />
+    <Content Include="Views\Teacher\GroupsPage.cshtml" />
+    <Content Include="Views\Teacher\GroupPage.cshtml" />
+    <Content Include="Views\Teacher\QuestionsPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -469,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206091146310_AnswerOption_Question_ToInt.resx">
       <DependentUpon>202206091146310_AnswerOption_Question_ToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206141332028_TestUpdated_TestResultAdded.resx">
+      <DependentUpon>202206141332028_TestUpdated_TestResultAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

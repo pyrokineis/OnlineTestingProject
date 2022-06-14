@@ -58,7 +58,9 @@ namespace OnlineTestingProject.Models
         public TestStatus Status { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime Deadline { get; set; }
-        public DateTime FinishDate { get; set; }
+        public int PointsPerQuestion { get; set; }
+        public int QuestionsAmount { get; set; }
+        public int MaxPoints { get; set; }
         public string CreatorLogin { get; set; }
         public  TestTheme Theme { get; set; }
     }
@@ -83,5 +85,14 @@ namespace OnlineTestingProject.Models
         public int TestId { get; set; }
         public string UserId { get; set; }
     }
-    
+
+    public class TestResult
+    {
+        public int Id { get; set; }
+        public int TestId { get; set; }
+        public string UserId { get; set; }
+        public int Score { get; set; }
+        public DateTime FinishDate { get; set; }
+    }
+
 }

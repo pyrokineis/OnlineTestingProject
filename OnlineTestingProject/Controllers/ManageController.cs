@@ -18,6 +18,7 @@ namespace OnlineTestingProject.Controllers
 
         public ManageController()
         {
+
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)

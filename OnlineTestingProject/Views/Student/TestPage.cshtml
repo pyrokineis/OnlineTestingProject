@@ -45,33 +45,8 @@
 
     if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.InProgress)
     {
-        int k = 1;
+        int k;
         <h1>работаем</h1>
-        @*foreach (Question qst in ViewBag.Qstns)
-        {
-            <div>
-                @{
-                    <b>Ваааапрос номер @k</b>
-                    <p>@qst.Text</p>
-                    foreach (AnswersOption opt in ViewBag.QstOptions)
-                    {
-                        if (opt.QuestionId == qst.Id)
-                        {
-                            if (qst.TypeId == 1)
-                            {
-                                <p>тыц</p>
-                                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text);
-                            }
-
-                        }
-                    }
-
-                }
-                <hr />
-            </div>
-            k++;
-        }*@
-
 
         <b>АААААААААААААААААААААААААААА</b>
         using (Html.BeginForm("TestSubmit", "Student", FormMethod.Post))
@@ -79,10 +54,14 @@
             <table class="table table-bordered table-striped">
                 @for (int i = 0; i < Model.QuestionsAndOptions.Count; i++)
                 {
+                    k = i + 1;
                     var question = Model.QuestionsAndOptions[i];
+                    var ind = 0;
+                    var checboxInd = 0;
                     <tr>
                         <td>
-                            <b>@question.Key.Text</b>
+                            <b>@k. @question.Key.Text</b>
+                            <br />
                             @if (question.Key.TypeId == 1)
                             {
                                 foreach (var answer in question.Value)
@@ -90,7 +69,8 @@
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value", answer, false) @answer
+                                    @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]", answer, false) @answer
+                                    <br />
                                 }
 
                             }
@@ -101,8 +81,9 @@
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value", answer) @answer
-                                    @Html.CheckBoxFor(m=>m.Answers[question.Key.Id.ToString()], new { value = answer})
+                                    @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value[" + checboxInd + "]", new { value = answer }) @answer
+                                    <br />
+                                    checboxInd++;
                                 }
 
                             }
@@ -113,7 +94,7 @@
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value")
+                                    @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]")
                                 }
 
                             }
@@ -128,41 +109,6 @@
                                 }
 
                             }
-
-                            @*@foreach (var answer in question.Value)
-        {
-            if (question.Key.TypeId == 1)  /*single*/
-            {
-                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
-                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
-                <input type="hidden" name="testId" value="@Model.Test.Id" />
-                @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value", answer, false) @answer
-            }
-
-            if (question.Key.TypeId == 2)   /*multiple*/
-            {
-                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
-                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
-                <input type="hidden" name="testId" value="@Model.Test.Id" />
-                @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value", answer) @answer
-
-            }
-            if (question.Key.TypeId == 3)  /*text*/
-            {
-                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
-                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
-                <input type="hidden" name="testId" value="@Model.Test.Id" />
-                @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value")
-            }
-            if (question.Key.TypeId == 10)   /*compare*/
-            {
-                <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
-                <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
-                <input type="hidden" name="testId" value="@Model.Test.Id" />
-                <b>хызы пока</b>
-            }
-
-        }*@
                         </td>
                     </tr>
                 }

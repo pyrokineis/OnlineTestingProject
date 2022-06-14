@@ -26,7 +26,8 @@ namespace OnlineTestingProject.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            //: base("SQLServer", throwIfV1Schema: false)
+                        : base("DefaultConnection", throwIfV1Schema: false)
         { }
         //public ApplicationDbContext()
         //    : base("MySQL_DB", throwIfV1Schema: false)
@@ -42,10 +43,13 @@ namespace OnlineTestingProject.Models
         public DbSet<TestAssignedGroup> TestAssignedGroups { get; set; }
         public DbSet<TestAssignedUser> TestAssignedUsers { get; set; }
         public DbSet<AnswersOption> AnswersOptions { get; set; }
+        public DbSet<TestResult> TestResults { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        
 
         //protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         //{
@@ -56,5 +60,5 @@ namespace OnlineTestingProject.Models
         //    modelBuilder.Entity<IdentityUserLogin>().ToTable("aspnetuserlogins");
         //    modelBuilder.Entity<IdentityUserClaim>().ToTable("aspnetuserclaims");  
         //}
-    }
+        }
 }

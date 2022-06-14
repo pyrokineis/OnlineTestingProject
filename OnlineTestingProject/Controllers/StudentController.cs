@@ -56,15 +56,15 @@ namespace OnlineTestingProject.Controllers
             TestVM testVM = new TestVM(test);
 
             var qsts = _testService.GetQuestionsInTest(test);            // get all questions in test
-            var qstsOpts = _answerService.GetAnswersOptions(qsts);           //get all answer options for every question
+/*            var qstsOpts = _answerService.GetAnswersOptions(qsts);   */        //get all answer options for every question
 
-            ViewBag.Qstns = qsts;
-            ViewBag.QstOptions = qstsOpts;  //get all answer options for every question
+            //ViewBag.Qstns = qsts;
+            //ViewBag.QstOptions = qstsOpts;  //get all answer options for every question
 
             string[] mas;
             foreach (Question qst in qsts)
             {
-                mas = _answerService.GetAnswerOptionsStrings(qst);
+                mas = _answerService.GetAnswerOptionsStrings(qst);  //get strings of qsts options
                 testVM.Add(qst, mas);
             }
 
@@ -87,9 +87,8 @@ namespace OnlineTestingProject.Controllers
         public ActionResult TestSubmit(TestVM testVM, int testId)
         {
             var userId = User.Identity.GetUserId();
-
+            
             var answers = testVM.Answers;
-
             var test = _testService.GetTest(testId);
             var questionsInTest = _testService.GetQuestionsInTest(test);
 
@@ -98,7 +97,7 @@ namespace OnlineTestingProject.Controllers
 
             AnswerResult res;
 
-            foreach (KeyValuePair<string, string> entry in answers)
+            foreach (KeyValuePair<string, string[]> entry in answers)
             {
                 question = _questionService.GetQuestion(Int32.Parse(entry.Key));
                 res = _answerService.CompareAnswer(question, test, userId, entry.Value);

@@ -21,7 +21,6 @@ namespace OnlineTestingProject.Services
         {
 
             test.CreationDate = DateTime.Now;
-            test.FinishDate = DateTime.Now;
             test.Deadline = DateTime.Now;
             test.Status = Models.Enums.TestStatus.NotStarted;
 

@@ -28,8 +28,8 @@ namespace OnlineTestingProject.Services
                     return AnswerResult.Min;
 
                 case 2:  //multiple
-                    string[] mas1 = AnsData.Split(',');
-                    string[] mas2 = qst.AnswerData.Split(',');
+                    string[] mas1 = AnsData.Split(',');  //user
+                    string[] mas2 = qst.AnswerData.Split(',');  //true
                     bool isSubset = mas1.All(elem => mas2.Contains(elem));
                     if (isSubset)
                         return AnswerResult.Max;
@@ -49,7 +49,53 @@ namespace OnlineTestingProject.Services
                     return AnswerResult.Min;
 
                 case 3: //text
-                    if (AnsData.Trim()==qst.AnswerData.Trim())
+                    if (AnsData==qst.AnswerData.Trim())
+                        return AnswerResult.Max;
+                    return AnswerResult.Min;
+
+                //case 4: //compare
+
+
+                default: return AnswerResult.Min;
+
+
+
+            }
+        }
+
+        public AnswerResult CompareAnswer(Question qst, Test test, string userId, string[] AnsData)
+        {
+            switch (qst.TypeId)
+            {
+
+                case 1:  //single
+                    if (AnsData[0] == qst.AnswerData)
+                        return AnswerResult.Max;
+                    return AnswerResult.Min;
+
+                case 2:  //multiple
+                    //string[] mas1 = AnsData.Split(',');
+                    string[] mas2 = qst.AnswerData.Split(',');
+                    bool isSubset = AnsData.All(elem => mas2.Contains(elem));
+                    if (isSubset)
+                        return AnswerResult.Max;
+
+                    int k = 0;
+                    foreach (var element in AnsData)
+                    {
+                        if (mas2.Contains(element))
+                        {
+                            k++;
+                            break;
+                        }
+                    }
+                    if (k > 0)
+                        return AnswerResult.Half;
+
+                    return AnswerResult.Min;
+
+                case 3: //text
+                    if (AnsData[0] == qst.AnswerData.Trim())
                         return AnswerResult.Max;
                     return AnswerResult.Min;
 
@@ -102,7 +148,8 @@ namespace OnlineTestingProject.Services
 
         public void AddUserAnswer(Question qst, Test test, string ansData, string userId, AnswerResult res)
         {
-            _dbContext.UserAnswers.Add(new UserAnswer{ 
+            _dbContext.UserAnswers.Add(new UserAnswer
+            {
                 UserId = userId,
                 Question = qst,
                 Test = test,
@@ -112,9 +159,25 @@ namespace OnlineTestingProject.Services
             _dbContext.Save();
         }
 
+        public void AddUserAnswer(Question qst, Test test, string[] mas, string userId, AnswerResult res)
+        {
+            //_dbContext.UserAnswers.Add(new UserAnswer{ 
+            //    UserId = userId,
+            //    Question = qst,
+            //    Test = test,
+            //    Data = ansData,
+            //    Result = res
+            //});
+            _dbContext.Save();
+        }
+
         public List<UserAnswer> GetUserAnswersInTest(Test test, string userId)
         {
             return _dbContext.UserAnswers.GetAll().Where(x => x.Test.Id == test.Id && x.UserId==userId).ToList();
         }
+
+
+
+
     }
 }
