@@ -16,5 +16,6 @@ namespace OnlineTestingProject.Interfaces
         void AddUserAnswer(Question qst, Test test, string ansData, string userId, AnswerResult res);
         void AddUserAnswer(Question qst, Test test, string[] ansData, string userId, AnswerResult res);
         List<UserAnswer> GetUserAnswersInTest(Test test, string userId);
+        void DeleteAnswerOption(int optId);
     }
 }

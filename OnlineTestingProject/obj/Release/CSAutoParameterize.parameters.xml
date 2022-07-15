@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-OnlineTestingProject-20220404082048.mdf;Initial Catalog=SecurityDB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Admin\\Desktop\\temp\\3\.1\.2-3\.1\.3\\OnlineTestingProject\\OnlineTestingProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MySQL_DB-Web.config Connection String" description="MySQL_DB Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Server=localhost;Database=onlinetestingsystem;Uid=root;Pwd=root;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Admin\\Desktop\\temp\\3\.1\.2-3\.1\.3\\OnlineTestingProject\\OnlineTestingProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MySQL_DB']/@connectionString" />
+  </parameter>
+  <parameter name="SQLServer-Web.config Connection String" description="SQLServer Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=GITGUDCASUL\SQLEXPRESS;Integrated Security=True; Initial Catalog=TestingProject_DB; Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Admin\\Desktop\\temp\\3\.1\.2-3\.1\.3\\OnlineTestingProject\\OnlineTestingProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SQLServer']/@connectionString" />
+  </parameter>
+  <parameter name="ASPNET-Web.config Connection String" description="ASPNET Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=SQL8002.site4now.net;Initial Catalog=db_a8893a_glockamole001;User Id=db_a8893a_glockamole001_admin;Password=4e4etkaS" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Admin\\Desktop\\temp\\3\.1\.2-3\.1\.3\\OnlineTestingProject\\OnlineTestingProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ASPNET']/@connectionString" />
+  </parameter>
+</parameters>

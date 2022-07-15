@@ -1,0 +1,41 @@
+﻿@using OnlineTestingProject.Models
+@model Question
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+<h2>Создать вопрос</h2>
+@using (Html.BeginForm("AddQuestion", "Admin", FormMethod.Post))
+{
+    <div class="item">
+        <label>Текст вопроса</label>
+        @Html.TextBoxFor(m=>m.Text)
+    </div>
+    <div><div class="item">
+    <label>Тип вопроса</label>
+    @*@Html.DropDownList("questionTypeName", (SelectList)ViewBag.qstTypes)*@
+    @Html.DropDownListFor(model=>model.Type, (IEnumerable<SelectListItem>)ViewBag.qstTypes)
+
+</div></div>
+    <div class="item">
+        <label>Ответ</label>
+        @Html.TextBoxFor(m=>m.AnswerData)
+    </div>
+    <input type="submit" value="Отправить"/>
+}
+<h2>Все вопросы</h2>
+    <div>
+           @foreach(Question qst in ViewBag.qstList)
+            {
+                <div>
+                    @qst.Text
+                </div>
+            }
+    </div>
+</body>
+</html>

@@ -26,8 +26,9 @@ namespace OnlineTestingProject.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            //: base("SQLServer", throwIfV1Schema: false)
-                        : base("DefaultConnection", throwIfV1Schema: false)
+        //: base("SQLServer", throwIfV1Schema: false)
+        //: base("DefaultConnection", throwIfV1Schema: false)
+        : base("ASPNET", throwIfV1Schema: false)
         { }
         //public ApplicationDbContext()
         //    : base("MySQL_DB", throwIfV1Schema: false)
@@ -49,16 +50,6 @@ namespace OnlineTestingProject.Models
             return new ApplicationDbContext();
         }
 
-        
-
-        //protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.Entity<IdentityUser>().ToTable("aspnetusers");
-        //    modelBuilder.Entity<IdentityRole>().ToTable("aspnetroles");
-        //    modelBuilder.Entity<IdentityUserRole>().ToTable("aspnetuserroles");
-        //    modelBuilder.Entity<IdentityUserLogin>().ToTable("aspnetuserlogins");
-        //    modelBuilder.Entity<IdentityUserClaim>().ToTable("aspnetuserclaims");  
-        //}
+       
         }
 }

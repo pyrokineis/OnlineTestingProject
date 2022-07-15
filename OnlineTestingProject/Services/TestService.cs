@@ -1,5 +1,6 @@
 ﻿using OnlineTestingProject.Interfaces;
 using OnlineTestingProject.Models;
+using OnlineTestingProject.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,12 @@ namespace OnlineTestingProject.Services
             _dbContext = uoW;
         }
 
-        IQuestionService questionService;
         public void AddTest(Test test)
         {
 
             test.CreationDate = DateTime.Now;
-            test.Deadline = DateTime.Now;
-            test.Status = Models.Enums.TestStatus.NotStarted;
-
+            test.Status = TestStatus.NotStarted;
+            test.PointsPerQuestion = 1;
             _dbContext.Tests.Add(test);
             _dbContext.Tests.Save();
         }
@@ -124,18 +123,17 @@ namespace OnlineTestingProject.Services
                 _dbContext.QuestionsInTests.Add(new QuestionsInTest
                 {
                     QuestionId = _qst.Id,
-                    Test = test
+                    TestId = test.Id
                 });
 
             }
-
             else
             {
                 _dbContext.Questions.Add(qst);
                 _dbContext.Save();
                 _dbContext.Questions.Attach(qst);
 
-                if (qst.TypeId == 3)
+                if (qst.Type == QuestionsTypes.Текстовый)
                     _dbContext.AnswersOptions.Add(new AnswersOption
                     {
                         QuestionId = qst.Id,
@@ -146,18 +144,37 @@ namespace OnlineTestingProject.Services
                 _dbContext.QuestionsInTests.Add(new QuestionsInTest
                 {
                     QuestionId = qst.Id,
-                    Test = test
+                    TestId = test.Id
                 });
 
             }
+            _dbContext.Tests.Attach(test);
 
+            test.QuestionsAmount +=1;
+            test.PointsPerQuestion = test.MaxPoints / test.QuestionsAmount;
 
+            _dbContext.Tests.Update(test);
+            _dbContext.Save();
+        }
+
+        public void DeleteQstFromTest(int testId, int qstId)
+        {
+           var test = _dbContext.Tests.Get(testId.ToString());
+            _dbContext.Tests.Attach(test);
+            test.QuestionsAmount -= 1;
+            if (test.QuestionsAmount!=0)
+                test.PointsPerQuestion = test.MaxPoints / test.QuestionsAmount;
+
+            QuestionsInTest qst = _dbContext.QuestionsInTests.GetAll().Where(x => x.QuestionId == qstId && x.TestId == testId).FirstOrDefault();
+            _dbContext.QuestionsInTests.Delete(qst.Id);
             _dbContext.Save();
         }
 
         public List<Question> GetQuestionsInTest(Test test)
         {
-            var list = _dbContext.QuestionsInTests.GetAll().Where(x => x.Test.Id == test.Id);
+            if (test == null)
+                return null;
+            var list = _dbContext.QuestionsInTests.GetAll().Where(x => x.TestId == test.Id);
             var list3 = _dbContext.QuestionsInTests.GetAll();
             Question qst;
             List<Question> list2 = new List<Question>();
@@ -196,6 +213,41 @@ namespace OnlineTestingProject.Services
                 list2.Add(_dbContext.Tests.Get(gr.TestId.ToString()));
             }
             return list2;
+        }
+
+
+        public void SaveTestResults(Test test, string userId, int score)
+        {
+            _dbContext.TestResults.Add(new TestResult { 
+                TestId = test.Id,
+                UserId = userId,
+                Score = score,
+                FinishDate=DateTime.Now
+            });
+
+            _dbContext.Tests.Attach(test);
+            test.Status = TestStatus.Finished;
+            _dbContext.Tests.Update(test);
+
+            _dbContext.Save();
+        }
+        public TestResult GetTestResult(Test test, string userId)
+        {
+            return _dbContext.TestResults.GetAll().Where(x => x.TestId == test.Id && x.UserId == userId).FirstOrDefault();
+        }
+
+        public int GetTestScore(Test test, string userId)
+        {
+            var res = 0;
+            var list = _dbContext.UserAnswers.GetAll().Where(x => x.TestId == test.Id && x.UserId == userId);
+            foreach (var obj in list)
+            {
+                if (obj.Result == AnswerResult.Max)
+                    res += test.PointsPerQuestion;
+                if (obj.Result == AnswerResult.Half)
+                    res += test.PointsPerQuestion / 2;  
+            }
+            return res;
         }
 
 

@@ -1,4 +1,7 @@
-﻿namespace OnlineTestingProject.Models.Enums
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace OnlineTestingProject.Models.Enums
 {
     public enum AnswerResult
     {
@@ -7,11 +10,14 @@
         Max = 2,
 
     }
-
-    public enum QuestionTypes
+    public enum QuestionsTypes
     {
-
+        Тестовый = 1,
+        НесколькоВариатов = 2,
+        Текстовый = 3,
+        Порядок = 4
     }
+
 
     public enum TestStatus
     {

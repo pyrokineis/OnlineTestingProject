@@ -16,6 +16,7 @@ namespace OnlineTestingProject.Interfaces
         IRepository<QuestionsInTest> QuestionsInTests { get; }
         IRepository<AnswersOption> AnswersOptions { get; }
         IRepository<UserAnswer> UserAnswers { get; }
+        IRepository<TestResult> TestResults { get; }
         void Save();
     }
 }

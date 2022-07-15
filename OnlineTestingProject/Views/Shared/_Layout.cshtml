@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - приложение ASP.NET</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -18,11 +19,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Система тестирования", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Админка", "Index", "Admin")</li>
+                    @*<li>@Html.ActionLink("Теструм", "Index", "Admin")</li>*@
                     <li>@Html.ActionLink("Учитель", "Index", "Teacher")</li>
                     <li>@Html.ActionLink("Студент", "Index", "Student")</li>
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>

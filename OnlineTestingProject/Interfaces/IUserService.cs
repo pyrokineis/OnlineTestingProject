@@ -16,6 +16,7 @@ namespace OnlineTestingProject.Interfaces
         ApplicationUser GetUserByFullName(string line);
         void AddUserToGroup(ApplicationUser user, Group gr);
         void AddUserToGroup(ApplicationUser user, int grId);
+        void RemoveUserToGroup(ApplicationUser user, int grId);
         ApplicationUser GetCurrentUser(HttpContext context);
     }
 }

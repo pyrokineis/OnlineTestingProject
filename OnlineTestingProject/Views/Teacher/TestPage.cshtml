@@ -1,4 +1,5 @@
 ﻿@using OnlineTestingProject.Models
+@using OnlineTestingProject.Models.Enums
 @model Question
 
 @{
@@ -6,148 +7,199 @@
     ViewBag.Title = test.Name;
 }
 
-<h2>Тест: @test.Name</h2>
+<h2>Название теста: @test.Name</h2>
 <br />
-@using (Html.BeginForm("AssignUser", "Admin", FormMethod.Post))
+@using (Html.BeginForm("AssignUser", "Admin", FormMethod.Post, new { @class = "form-floating" }))
 {
+    <div class="form-inline">
+        @Html.TextBox("userName", "Введите логин пользователя:", new { @class = "form-control", @style = "margin: 5px" })
+        @Html.Hidden("testId", test.Id)
+        <input type="submit" value="Добавить пользователя" class="btn btn-primary" />
+    </div>
 
-    @Html.TextBox("userName", "Введите логин пользователя:");
-    @Html.Hidden("testId", test.Id)
-    <input type="submit" value="Добавить пользователя" />
 }
 
 @using (Html.BeginForm("AssignGroup", "Admin", FormMethod.Post))
 {
-    @Html.TextBox("groupName", "Введите название группы:");
-    @Html.Hidden("testId", test.Id)
-    <input type="submit" value="Добавить группу" />
-}
-
-<h2>Группы, которым назначен тест</h2>
-@foreach (Group gr in ViewBag.groupsList)
-{
-    <div>
-        @gr.Name
+    <div class="form-inline">
+        @Html.TextBox("groupName", "Введите название группы:", new { @class = "form-control", @style = "margin: 5px" })
+        @Html.Hidden("testId", test.Id)
+        <input type="submit" value="Добавить группу" class="btn btn-primary" />
     </div>
-}
-<h2>Пользователи, которым назначен тест</h2>
-@foreach (ApplicationUser user in ViewBag.usersList)
-{
 
-    <div>
-        @user.UserName
-    </div>
 }
 
+<h3>Группы, которым назначен тест</h3>
+<table class="table">
+    @foreach (Group gr in ViewBag.groupsList)
+    {
+        <tr>
+            <th>
+                @gr.Name
+            </th>
+        </tr>
+    }
+</table>
 
-<h3>Добавить вопрос</h3>
 
+
+
+<h3>Пользователи, которым назначен тест</h3>
+<table class="table">
+    @foreach (ApplicationUser user in ViewBag.usersList)
+    {
+        <tr>
+            <th>
+                @user.UserName
+            </th>
+        </tr>
+    }
+</table>
+
+
+<h2>Добавить вопрос</h2>
+<b>Внимание!</b>
+<ul>
+    <li>Для вопросов с одиним вариантом ответа указывайте ответ в виде "правильный ответ1" (без кавычек)</li>
+    <li>Для вопросов с несколькими вариантами ответа указывайте ответ в виде "правильный ответ1,правильный ответ2" (без кавычек)</li>
+    <li>Для вопросов с текстовым ответом указывайте ответ в виде "правильный ответ1,правильный ответ2" (без кавычек)</li>
+    <li>Для вопросов с указанием правильного порядка указывайте ответ в виде "ответ1,ответ2,ответ3" (без ковычек)</li>
+</ul>
 <hr />
-@using (Html.BeginForm("AddQuestionToTest", "Admin", FormMethod.Post))
+@using (Html.BeginForm("AddQuestionToTest", "Admin", FormMethod.Post, new { @class = "form-floating" }))
 {
     @Html.Hidden("testId", test.Id)
     <div class="item">
-        <label>Текст вопроса</label>
-        @Html.TextBoxFor(m => m.Text)
+        <label for="text">Текст вопроса: </label>
+        @Html.TextBoxFor(m => m.Text, new { @class = "form-control", id = "text" })
     </div>
     <div>
         <div class="item">
-            <label>Тип вопроса</label>
+            <label for="list">Тип вопроса: </label>
             @*@Html.DropDownList("questionTypeName", (SelectList)ViewBag.qstTypes)*@
-            @Html.DropDownListFor(model => model.TypeId, (IEnumerable<SelectListItem>)ViewBag.qstTypes)
+            @Html.DropDownListFor(model => model.Type, (IEnumerable<SelectListItem>)ViewBag.qstTypes, new { @class = "form-control", id = "list" })
 
         </div>
     </div>
-    <div class="item">
-        <label>Ответ</label>
-        @Html.TextBoxFor(m => m.AnswerData)
+    <div>
+        <label for="answer">Правильный ответ: </label>
+        @Html.TextBoxFor(m => m.AnswerData, new { @class = "form-control", id = "answer" })
 
     </div>
-    <input type="submit" value="Отправить" />
+    <input type="submit" value="Добавить" class="btn btn-primary" style="margin-top: 5px" />
 }
-
-<h2>Вопросы в тесте</h2>
+<hr />
+<h2><b>Вопросы в тесте</b></h2>
 
 @{
     int i = 1;
+    char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    SelectList alphaList;
 }
 @foreach (Question qst in ViewBag.qstList)
 {
 
-    <div>
+    @*@Html.ActionLink("Удалить вопрос", "DeleteQstFromTest", "Teacher", new { qstId = qst.Id, testId = test.Id }, null)*@
+    using (Html.BeginForm("DeleteQstFromTest", "Teacher", FormMethod.Post))
+    {
+        <div class="form-inline">
+            <b>@i.  @qst.Text</b>
+            <input type="submit" value="Удалить вопрос" class="btn btn-primary btn-sm" />
 
-        <b>@i  @qst.Text</b>
-    </div>
+            @Html.Hidden("qstId", qst.Id)
+            @Html.Hidden("testId", test.Id)
+        </div>
+        <p>Правильный ответ: @qst.AnswerData</p>
+    }
+
     foreach (AnswersOption opt in ViewBag.QstOptions)
     {
         if (opt.QuestionId == qst.Id)
         {
-            if (qst.TypeId == 1)   /*single*/
+
+            if (qst.Type == QuestionsTypes.Тестовый)   /*single*/
             {
-                @Html.RadioButton(opt.QuestionId.ToString(), opt.Text) @opt.Text
+                <div class="form-inline">
+                    @Html.RadioButton(opt.QuestionId.ToString(), opt.Text) @opt.Text
+                    <a href="@Url.Action("DeleteAnswerOption","Teacher",  new { optId = opt.Id })"
+                       class="btn btn-primary btn-sm">Удалить вариант ответа</a>
+                </div>
             }
 
-            if (qst.TypeId == 2)  /*multiple*/
+            if (qst.Type == QuestionsTypes.НесколькоВариатов)  /*multiple*/
             {
-                @Html.CheckBox(opt.QuestionId.ToString(), opt.Text) @opt.Text
-                <br />
+                <div style="margin-right: 10px">
+                    @Html.CheckBox(opt.QuestionId.ToString(), opt.Text) @opt.Text
+                </div>
+
+                <a href="@Url.Action("DeleteAnswerOption","Teacher",  new { optId = opt.Id })"
+                   class="btn btn-primary btn-sm">Удалить вариант ответа</a>
             }
 
-            if (qst.TypeId == 3)  /*Text*/
+            if (qst.Type == QuestionsTypes.Текстовый)  /*Text*/
             {
-                <b>без варинтов ежжи</b>
             }
 
-            if (qst.TypeId == 10)  /*compare*/
+            if (qst.Type == QuestionsTypes.Порядок)  /*Order*/
             {
-                <b>хз пока</b>
-
+                alphaList = new SelectList(alpha.Take(qst.AnswerOptionsAmount));
+                <div>
+                    @Html.DropDownList(opt.QuestionId.ToString(), alphaList, new { @class = "form-select" }) @opt.Text
+                </div>
+                <a href="@Url.Action("DeleteAnswerOption","Teacher",  new { optId = opt.Id })"
+                   class="btn btn-primary btn-sm">Удалить вариант ответа</a>
             }
-
+            <br />
         }
 
-
     }
-    if (qst.TypeId == 1)   /*single*/
+
+
+    if (qst.Type == QuestionsTypes.Тестовый)   /*single*/
     {
         using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
         {
-            <div class="item">
-                <label>Текст варианта ответа</label>
-                @Html.TextBox("text", "Введите текст варианта ответа:");
+            <div class="form-inline">
+                <label>Текст варианта ответа: </label>
+                @Html.TextBox("text", "", new { @class = "form-control" })
                 @Html.Hidden("qstId", qst.Id)
+                <input type="submit" value="Добавить" class="btn btn-primary" />
             </div>
 
-            <input type="submit" value="Добавить" />
         }
     }
 
-    if (qst.TypeId == 2)  /*multiple*/
+    if (qst.Type == QuestionsTypes.НесколькоВариатов)  /*multiple*/
     {
         using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
         {
-            <div class="item">
-                <label>Текст варианта ответа</label>
-                @Html.TextBox("text", "Введите текст варианта ответа:");
+            <div class="form-inline">
+                <label>Текст варианта ответа: </label>
+                @Html.TextBox("text", "", new { @class = "form-control" })
                 @Html.Hidden("qstId", qst.Id)
+                <input type="submit" value="Добавить" class="btn btn-primary" />
             </div>
-
-            <input type="submit" value="Добавить" />
         }
     }
 
-    if (qst.TypeId == 3)  /*Text*/
+    if (qst.Type == QuestionsTypes.Текстовый)  /*Text*/
     {
 
     }
 
-    if (qst.TypeId == 10)  /*compare*/
-    {
-        <b>хз пока</b>
 
+    if (qst.Type == QuestionsTypes.Порядок)  /*inOrder*/
+    {
+        using (Html.BeginForm("AddAnswerOption", "Admin", FormMethod.Post))
+        {
+            <div class="form-inline">
+                <label>Текст варианта ответа: </label>
+                @Html.TextBox("text", "", new { @class = "form-control" })
+                @Html.Hidden("qstId", qst.Id)
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        }
     }
     i++;
     <hr />
-
-
 }

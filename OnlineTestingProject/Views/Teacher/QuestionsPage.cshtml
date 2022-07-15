@@ -19,7 +19,7 @@
     <div><div class="item">
     <label>Тип вопроса</label>
     @*@Html.DropDownList("questionTypeName", (SelectList)ViewBag.qstTypes)*@
-    @Html.DropDownListFor(model=>model.TypeId, (IEnumerable<SelectListItem>)ViewBag.qstTypes)
+    @Html.DropDownListFor(model=>model.Type, (IEnumerable<SelectListItem>)ViewBag.qstTypes)
 
 </div></div>
     <div class="item">

@@ -18,6 +18,7 @@ namespace OnlineTestingProject.Repositories
         private QuestionsInTestsRepository _questionsInTestsRepository;
         private AnswerOptionRepository _answerOptionRepository;
         private UserAnswerRepository _userAnswerRepository;
+        private TestResultRepository _testResultRepository;
         public EfUnitOfWork(ApplicationDbContext db)
         {
             _dbContext = db;
@@ -35,25 +36,9 @@ namespace OnlineTestingProject.Repositories
         public IRepository<QuestionsInTest> QuestionsInTests => _questionsInTestsRepository ?? (_questionsInTestsRepository = new QuestionsInTestsRepository(_dbContext));
         public IRepository<AnswersOption> AnswersOptions  => _answerOptionRepository ?? (_answerOptionRepository = new AnswerOptionRepository(_dbContext));
         public IRepository<UserAnswer> UserAnswers => _userAnswerRepository ?? (_userAnswerRepository = new UserAnswerRepository(_dbContext));
+        public IRepository<TestResult> TestResults => _testResultRepository ?? (_testResultRepository = new TestResultRepository(_dbContext));
 
-        //public IRepository<Question> Questions
-        //{
-        //    get
-        //    {
-        //        if (_questionRepository == null)
-        //            _questionRepository = new QuestionRepository(_dbContext);
-        //        return _questionRepository;
-        //    }
-        //}
-        //public IRepository<QuestionType> QuestionTypes
-        //{
-        //    get
-        //    {
-        //        if (_questionTypeRepository == null)
-        //            _questionTypeRepository = new QuestionTypeRepository(_dbContext);
-        //        return _questionTypeRepository;
-        //    }
-        //}
+
 
         public void Save()
         {

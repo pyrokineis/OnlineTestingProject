@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.16.1.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.16.1\lib\net472\AngleSharp.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -58,6 +61,9 @@
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.2.16.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.2.16\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -68,6 +74,9 @@
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll</HintPath>
@@ -83,6 +92,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -95,6 +105,15 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -163,6 +182,15 @@
     <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347">
       <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.2.0\lib\net47\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.4.2.0\lib\net47\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriverManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebDriverManager.2.13.0\lib\net46\WebDriverManager.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -311,6 +339,30 @@
     <Compile Include="Migrations\202206141332028_TestUpdated_TestResultAdded.designer.cs">
       <DependentUpon>202206141332028_TestUpdated_TestResultAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206161642261_kindaLast.cs" />
+    <Compile Include="Migrations\202206161642261_kindaLast.designer.cs">
+      <DependentUpon>202206161642261_kindaLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206162351212_kindaLastLast.cs" />
+    <Compile Include="Migrations\202206162351212_kindaLastLast.designer.cs">
+      <DependentUpon>202206162351212_kindaLastLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206170054178_kindaLastLastLast.cs" />
+    <Compile Include="Migrations\202206170054178_kindaLastLastLast.designer.cs">
+      <DependentUpon>202206170054178_kindaLastLastLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206170105269_kindaLastLastLast1.cs" />
+    <Compile Include="Migrations\202206170105269_kindaLastLastLast1.designer.cs">
+      <DependentUpon>202206170105269_kindaLastLastLast1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206170249192_UberLast.cs" />
+    <Compile Include="Migrations\202206170249192_UberLast.designer.cs">
+      <DependentUpon>202206170249192_UberLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206191644570_lastlastlast.cs" />
+    <Compile Include="Migrations\202206191644570_lastlastlast.designer.cs">
+      <DependentUpon>202206191644570_lastlastlast.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
@@ -328,6 +380,7 @@
     <Compile Include="Repositories\TestAssignedGroupRepository.cs" />
     <Compile Include="Repositories\TestAssignedUserRepository.cs" />
     <Compile Include="Repositories\TestRepository.cs" />
+    <Compile Include="Repositories\TestResultRepository.cs" />
     <Compile Include="Repositories\UserAnswerRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\UsersInGroupRepository.cs" />
@@ -349,6 +402,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -402,7 +457,7 @@
     <Content Include="Views\Admin\QuestionsPage.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
-    <Content Include="Views\Teacher\Tests.cshtml" />
+    <Content Include="Views\Teacher\TestsPage.cshtml" />
     <Content Include="Views\Admin\TestsPage.cshtml" />
     <Content Include="Views\Admin\GroupPage.cshtml" />
     <Content Include="Views\Errors\Error.cshtml" />
@@ -480,6 +535,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206141332028_TestUpdated_TestResultAdded.resx">
       <DependentUpon>202206141332028_TestUpdated_TestResultAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206161642261_kindaLast.resx">
+      <DependentUpon>202206161642261_kindaLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206162351212_kindaLastLast.resx">
+      <DependentUpon>202206162351212_kindaLastLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206170054178_kindaLastLastLast.resx">
+      <DependentUpon>202206170054178_kindaLastLastLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206170105269_kindaLastLastLast1.resx">
+      <DependentUpon>202206170105269_kindaLastLastLast1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206170249192_UberLast.resx">
+      <DependentUpon>202206170249192_UberLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206191644570_lastlastlast.resx">
+      <DependentUpon>202206191644570_lastlastlast.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

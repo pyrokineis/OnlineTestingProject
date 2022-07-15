@@ -14,7 +14,6 @@ namespace OnlineTestingProject.Controllers
 
     public class HomeController : Controller
     {
-        private readonly IQuestionService _questionService;
         private readonly IUserService _userService;
         public HomeController(IQuestionService serv, IUserService us)
         {
@@ -22,14 +21,7 @@ namespace OnlineTestingProject.Controllers
         }
         public ActionResult Index()
         {
-            var user = _userService.GetUserById(User.Identity.GetUserId());
-            var userIsAdmin = User.IsInRole("Admin");
-            var userIsStudent = User.IsInRole("Student");
-            var userIsTeacher = User.IsInRole("Teacher");
-
-
             return View();
-
         }
 
         public ActionResult About()

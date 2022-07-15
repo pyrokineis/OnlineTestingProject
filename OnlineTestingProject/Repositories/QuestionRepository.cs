@@ -45,7 +45,13 @@ namespace OnlineTestingProject.Repositories
         {
             Question qst = _dbContext.Questions.Find(id);
             if (qst != null)
+            {
+                //foreach(var opt in _dbContext.AnswersOptions.Where(x => x.QuestionId == id))
+                //{
+                //    _dbContext.AnswersOptions.Remove(opt);
+                //}
                 _dbContext.Questions.Remove(qst);
+            }
         }
 
         public void Add(Question item)

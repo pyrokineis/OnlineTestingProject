@@ -23,7 +23,7 @@ namespace OnlineTestingProject.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -73,7 +73,6 @@ namespace OnlineTestingProject.Controllers
             {
                 return View(model);
             }
-
             // Сбои при входе не приводят к блокированию учетной записи
             // Чтобы ошибки при вводе пароля инициировали блокирование учетной записи, замените на shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -154,6 +153,7 @@ namespace OnlineTestingProject.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Username, Firstname=model.Firstname, Surname=model.Surname, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

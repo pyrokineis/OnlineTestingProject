@@ -21,7 +21,12 @@ namespace OnlineTestingProject.Interfaces
         void DeasignUserFromTest(ApplicationUser user, Test test);
         void DeasignGroupFromTest(Group gr, Test test);
         void AddQuestionToTest(Test test, Question qst);
+        void DeleteQstFromTest(int testId, int qstId);
         List<Test> GetTestsAssignedDirectlyToUser(string userId);
         List<Test> GetTestsAssignedToUsersGroups(List<Group> userGroups);
+        TestResult GetTestResult(Test test, string userId);
+        void SaveTestResults(Test test, string userId, int score);
+        int GetTestScore(Test test, string userId);
+
     }
 }

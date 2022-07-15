@@ -28,9 +28,14 @@ namespace OnlineTestingProject.Controllers
         }
 
         // GET
-        [Authorize(Roles = "Teacher")]
+        //[Authorize(Roles = "Teacher")]
         public ActionResult Index()
         {
+
+            var user = _userService.GetUserById(User.Identity.GetUserId());
+            ViewBag.testsList = _testService.GetAllTests().Where(x => x.CreatorLogin == user.UserName);
+            ViewBag.groupsList = _groupService.GetAllGroups().Where(x => x.CreatorLogin == user.UserName);
+
             return View();
         }
 
@@ -47,7 +52,6 @@ namespace OnlineTestingProject.Controllers
         [HttpPost]
         public ActionResult AddQuestion(Question qst)
         {
-            //qst.Type = _questionService.FindQuestionType(questionTypeName);
             _questionService.AddQuestion(qst);
             return Redirect(Request.UrlReferrer.ToString());
         }
@@ -60,10 +64,23 @@ namespace OnlineTestingProject.Controllers
             return Redirect(Request.UrlReferrer.ToString());
         }
 
+        public ActionResult DeleteQstFromTest(int qstId, int testId)
+        {
+            _testService.DeleteQstFromTest(testId, qstId);
+            return Redirect(Request.UrlReferrer.ToString());
+
+        }
+
         public ActionResult AddAnswerOption(int qstId, string text)
         {
             var qst = _questionService.GetQuestion(qstId);
             _answerService.AddAnswerOption(qst, text);
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+
+        public ActionResult DeleteAnswerOption(int optId)
+        {
+           _answerService.DeleteAnswerOption(optId);
             return Redirect(Request.UrlReferrer.ToString());
         }
         public ActionResult GroupsPage()
@@ -80,16 +97,18 @@ namespace OnlineTestingProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddGroup(Group gr)
+        public ActionResult AddGroup(TeacherPageVM view)
         {
+            var gr = view.group;
+            gr.CreatorLogin  = _userService.GetUserById(User.Identity.GetUserId()).UserName;
             _groupService.AddGroup(gr);
-            return RedirectToAction("GroupsPage");
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteGroup(int id)
         {
             _groupService.DeleteGroup(id);
-            return RedirectToAction("GroupsPage");
+            return RedirectToAction("Index");
 
         }
         public ActionResult AddUser(string userline, int grId)
@@ -102,31 +121,36 @@ namespace OnlineTestingProject.Controllers
                 _userService.AddUserToGroup(user, grId);
                 return Redirect(Request.UrlReferrer.ToString());
             }
-            //return RedirectToAction("GroupPage", this.RouteData);
         }
 
-        public ActionResult AddTest(Test ts)
+        public ActionResult DeleteUserFromGroup(int grId, string userId)
+        {
+            var user = _userService.GetUserById(User.Identity.GetUserId());
+            _userService.RemoveUserToGroup(user, grId);
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+
+        public ActionResult AddTest(TeacherPageVM view)
         {
 
             var user = _userService.GetUserById(User.Identity.GetUserId());
-            ts.CreatorLogin = user.UserName;
-
-
-            _testService.AddTest(ts);
-
-            return RedirectToAction("TestsPage");
+            var test = view.test;
+            view.test.CreatorLogin = user.UserName;
+            _testService.AddTest(test);
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteTest(int id)
         {
             _testService.DeleteTest(id);
-            return RedirectToAction("TestsPage");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public ActionResult TestsPage()
         {
-            ViewBag.testsList = _testService.GetAllTests();
+            var user = _userService.GetUserById(User.Identity.GetUserId());
+            ViewBag.testsList = _testService.GetAllTests().Where(x=>x.CreatorLogin==user.UserName);
             return View();
         }
         public ActionResult TestPage(int id)

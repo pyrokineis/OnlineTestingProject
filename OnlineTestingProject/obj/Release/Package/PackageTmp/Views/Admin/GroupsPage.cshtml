@@ -1,0 +1,36 @@
+﻿@using OnlineTestingProject.Models
+@model Group
+ 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <b>Добавить группу</b>
+        @using (Html.BeginForm("AddGroup", "Admin", FormMethod.Post))
+        {
+            <div class="item">
+                <label>Название группы</label>
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <input type="submit" value="Отправить" />
+        }
+    </div>
+    <div>
+        <b>Все группы</b>
+        @foreach (Group gr in ViewBag.groupsList)
+        {
+
+            <div>
+                @gr.Name
+            </div>
+            @Html.ActionLink("Открыть группу", "GroupPage", "Admin", new { id = gr.Id }, null);
+            @Html.ActionLink("Удалить группу", "DeleteGroup", "Admin", new { id = gr.Id }, null);
+        }
+    </div>
+</body>
+</html>

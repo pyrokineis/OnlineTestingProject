@@ -16,10 +16,11 @@
         <b>Добавить тест</b>
         @using (Html.BeginForm("AddTest", "Admin", FormMethod.Post))
         {
-            <div class="item">
-                <label>Название теста</label>
-                @Html.TextBoxFor(test => test.Name)
-            </div>
+    <div class="item">
+        <label>Название теста</label>
+        @Html.TextBoxFor(test => test.Name)
+        @Html.TextBoxFor(test => test.MaxPoints)
+    </div>
             <input type="submit" value="Отправить" />
         }
     </div>

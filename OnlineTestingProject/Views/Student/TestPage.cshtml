@@ -1,54 +1,45 @@
 ﻿@using OnlineTestingProject.Models
+@using OnlineTestingProject.Models.Enums
 @model TestVM
 
 @{
     ViewBag.Title = Model.Test.Name;
 }
 
-<h2>Тест: @Model.Test.Name</h2>
-<br />
-
+<h1>Название теста: @Model.Test.Name</h1>
 @{
-    if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
-    {
-        <h1>Тест завершен</h1>
-        <b>Время создания: </b>
-        <b>@Model.Test.CreationDate</b>
-
-        <b>Время завершения: </b>
-        <b>@Model.Test.FinishDate</b>
-
-        <b>Создатель теста: </b>
-        <b>@Model.Test.CreatorLogin</b>
-
-    }
-
 
 
     if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.NotStarted)
     {
-        <h1>Тест не начат</h1>
-        <b>Время создания: </b>
-        <b>@Model.Test.CreationDate</b>
+        <h2>Тест не начат</h2>
+        <div class="item">
 
-        <b>Создатель теста: </b>
-        <b>@Model.Test.CreatorLogin</b>
-        using (Html.BeginForm("TestPage", "Student", FormMethod.Post))
-        {
-            @*@Model.Status = OnlineTestingProject.Models.Enums.TestStatus.InProgress;*@
-            @Html.Hidden("id", @Model.Test.Id)
-            @Html.Hidden("isStarted", true)
-            <input type="submit" value="Начать тест" />
-        }
+            @using (Html.BeginForm("TestPage", "Student", FormMethod.Post))
+            {
+                <b>Создатель теста: </b>
+                <p>@Model.Test.CreatorLogin</p>
+
+                <b>Время создания: </b>
+                <p>@Model.Test.CreationDate</p>
+
+                <b>Количество вопросов: </b>
+                <p>@Model.Test.QuestionsAmount</p>
+
+                <b>Макимальное количество баллов: </b>
+                <p>@Model.Test.MaxPoints</p>
+                @Html.Hidden("id", @Model.Test.Id)
+                @Html.Hidden("isStarted", true)
+                <input type="submit" value="Начать тест" class="btn btn-primary"/>
+            }
+        </div>
+
     }
 
 
     if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.InProgress)
     {
         int k;
-        <h1>работаем</h1>
-
-        <b>АААААААААААААААААААААААААААА</b>
         using (Html.BeginForm("TestSubmit", "Student", FormMethod.Post))
         {
             <table class="table table-bordered table-striped">
@@ -58,54 +49,63 @@
                     var question = Model.QuestionsAndOptions[i];
                     var ind = 0;
                     var checboxInd = 0;
+                    char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+                    SelectList alphaList;
                     <tr>
                         <td>
                             <b>@k. @question.Key.Text</b>
                             <br />
-                            @if (question.Key.TypeId == 1)
+                            @if (question.Key.Type == QuestionsTypes.Тестовый)       /*тестовый*/
                             {
                                 foreach (var answer in question.Value)
                                 {
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]", answer, false) @answer
+                                    @Html.RadioButton("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]", answer.Text) @answer.Text
                                     <br />
                                 }
 
                             }
-                            @if (question.Key.TypeId == 2)
+                            @if (question.Key.Type == QuestionsTypes.НесколькоВариатов)      /*чекбоксовый*/
                             {
+                                checboxInd = 0;
                                 foreach (var answer in question.Value)
                                 {
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value[" + checboxInd + "]", new { value = answer }) @answer
+                                    @Html.CheckBox("testVM.Answers[" + question.Key.Id + "].Value[" + checboxInd + "]", new { value = answer.Text }) @answer.Text
                                     <br />
                                     checboxInd++;
                                 }
-
                             }
-                            @if (question.Key.TypeId == 3)
+                            @if (question.Key.Type == QuestionsTypes.Текстовый)      /*текстовый*/
                             {
                                 foreach (var answer in question.Value)
                                 {
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]")
+                                    @Html.TextBox("testVM.Answers[" + question.Key.Id + "].Value[" + ind + "]", "", new {@class="form-control"})
                                 }
 
                             }
-                            @if (question.Key.TypeId == 10)
+                            @if (question.Key.Type == QuestionsTypes.Порядок)    /*порядочный*/
                             {
+                                checboxInd = 0;
+                                alphaList = new SelectList(alpha.Take(question.Key.AnswerOptionsAmount));
                                 foreach (var answer in question.Value)
                                 {
                                     <input type="hidden" name="testVM.Answers[@question.Key.Id].Key" value="@question.Key.Id" />
                                     <input type="hidden" name="testVM.Answers.Index" value="@question.Key.Id" />
                                     <input type="hidden" name="testId" value="@Model.Test.Id" />
-                                    <b>хызы пока</b>
+                                    <div>
+                                        @Html.DropDownList("testVM.Answers[" + question.Key.Id + "].Value[" + checboxInd + "]", alphaList, new { @style="margin: 5px" }) @answer.Text
+                                        
+                                    </div>
+
+                                    checboxInd++;
                                 }
 
                             }
@@ -114,10 +114,30 @@
                 }
                 <tr>
                     <td>
-                        <input type="submit" class="btn btn-primary" value="Submit" />
+                        <input type="submit" class="btn btn-primary btn-lg" value="Завершить" />
                     </td>
                 </tr>
             </table>
         }
+    }
+
+
+    if (Model.Test.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
+    {
+        <h2>Тест завершен!</h2>
+        <b>Создатель теста: </b>
+        <p>@Model.Test.CreatorLogin</p>
+
+        <b>Время создания: </b>
+        <p>@Model.Test.CreationDate</p>
+
+        <b>Количество вопросов: </b>
+        <p>@Model.Test.QuestionsAmount</p>
+
+        <b>Макимальное количество баллов: </b>
+        <p>@Model.Test.MaxPoints</p>
+
+        <b>Набранное количетсво баллов: </b>
+        <p>@Model.Result.Score</p>
     }
 }

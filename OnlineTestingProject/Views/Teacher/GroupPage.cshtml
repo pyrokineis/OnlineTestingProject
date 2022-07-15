@@ -5,22 +5,34 @@
     ViewBag.Title = Model.Name;
 }
 
-<h2>Группа @Model.Name</h2>
+<h2>@Model.Name</h2>
 <br />
-@using (Html.BeginForm("AddUser", "Admin", FormMethod.Post))
+@using (Html.BeginForm("AddUser", "Teacher", FormMethod.Post))
 {
-    @Html.Label("Введите логин пользователя");
-    @Html.TextBox("userline", "Введите логин");
-    @Html.Hidden("grId", @Model.Id)
-    <input type="submit" value="Добавить пользователя" />
+    <div class="form-inline">
+        @Html.Label("Введите логин пользователя: ");
+        @Html.TextBox("userline", "", new { @class = "form-control" })
+        @Html.Hidden("grId", @Model.Id)
+        <input type="submit" value="Добавить пользователя" class="btn btn-primary" />
+    </div>
+
+
 }
 <h2>Пользователи в группе</h2>
-@foreach (ApplicationUser user in ViewBag.usersList)
-{
+<table class="table" style="width: auto">
 
-    <div>
-        @user.UserName
-    </div>
-}
 
+    @foreach (ApplicationUser user in ViewBag.usersList)
+    {
+        <tr>
+            <th>
+                @user.UserName
+            </th>
+            <th>
+                <a href="@Url.Action("DeleteUserFromGroup","Teacher",  new { grId = Model.Id, userId = user.Id })"
+                   class="btn btn-primary btn-sm">Удалить</a>
+            </th>
+        </tr>
+    }
+</table>
 

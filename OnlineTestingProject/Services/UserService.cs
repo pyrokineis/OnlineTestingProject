@@ -50,7 +50,12 @@ namespace OnlineTestingProject.Services
             });
             _dbContext.UsersInGroups.Save();
         }
-
+        public void RemoveUserToGroup(ApplicationUser user, int grId)
+        {
+            var obj = _dbContext.UsersInGroups.Find(x => x.UserId == user.Id && x.GroupId == grId).FirstOrDefault();
+            _dbContext.UsersInGroups.Delete(obj.Id);
+            _dbContext.UsersInGroups.Save();
+        }
         public ApplicationUser GetUserByUsername(string username)
         {
             return _dbContext.Users.Find(r=>r.UserName==username).FirstOrDefault();

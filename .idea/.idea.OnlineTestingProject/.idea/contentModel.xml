@@ -104,6 +104,27 @@
           <e p="202206091146310_AnswerOption_Question_ToInt.cs" t="Include" />
           <e p="202206091146310_AnswerOption_Question_ToInt.designer.cs" t="Include" />
           <e p="202206091146310_AnswerOption_Question_ToInt.resx" t="Include" />
+          <e p="202206141332028_TestUpdated_TestResultAdded.cs" t="Include" />
+          <e p="202206141332028_TestUpdated_TestResultAdded.designer.cs" t="Include" />
+          <e p="202206141332028_TestUpdated_TestResultAdded.resx" t="Include" />
+          <e p="202206161642261_kindaLast.cs" t="Include" />
+          <e p="202206161642261_kindaLast.designer.cs" t="Include" />
+          <e p="202206161642261_kindaLast.resx" t="Include" />
+          <e p="202206162351212_kindaLastLast.cs" t="Include" />
+          <e p="202206162351212_kindaLastLast.designer.cs" t="Include" />
+          <e p="202206162351212_kindaLastLast.resx" t="Include" />
+          <e p="202206170054178_kindaLastLastLast.cs" t="Include" />
+          <e p="202206170054178_kindaLastLastLast.designer.cs" t="Include" />
+          <e p="202206170054178_kindaLastLastLast.resx" t="Include" />
+          <e p="202206170105269_kindaLastLastLast1.cs" t="Include" />
+          <e p="202206170105269_kindaLastLastLast1.designer.cs" t="Include" />
+          <e p="202206170105269_kindaLastLastLast1.resx" t="Include" />
+          <e p="202206170249192_UberLast.cs" t="Include" />
+          <e p="202206170249192_UberLast.designer.cs" t="Include" />
+          <e p="202206170249192_UberLast.resx" t="Include" />
+          <e p="202206191644570_lastlastlast.cs" t="Include" />
+          <e p="202206191644570_lastlastlast.designer.cs" t="Include" />
+          <e p="202206191644570_lastlastlast.resx" t="Include" />
           <e p="Configuration.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -119,6 +140,10 @@
         <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="Default Settings.pubxml" t="Include" />
+            <e p="FTPProfile.pubxml" t="Include" />
+          </e>
         </e>
         <e p="Repositories" t="Include">
           <e p="AnswerOptionRepository.cs" t="Include" />
@@ -130,6 +155,7 @@
           <e p="TestAssignedGroupRepository.cs" t="Include" />
           <e p="TestAssignedUserRepository.cs" t="Include" />
           <e p="TestRepository.cs" t="Include" />
+          <e p="TestResultRepository.cs" t="Include" />
           <e p="UserAnswerRepository.cs" t="Include" />
           <e p="UserRepository.cs" t="Include" />
           <e p="UsersInGroupRepository.cs" t="Include" />
@@ -212,8 +238,12 @@
             <e p="TestPage.cshtml" t="Include" />
           </e>
           <e p="Teacher" t="Include">
+            <e p="GroupPage.cshtml" t="Include" />
+            <e p="GroupsPage.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
-            <e p="Tests.cshtml" t="Include" />
+            <e p="QuestionsPage.cshtml" t="Include" />
+            <e p="TestPage.cshtml" t="Include" />
+            <e p="TestsPage.cshtml" t="Include" />
           </e>
           <e p="Test" t="Include">
             <e p="Index.cshtml" t="Include" />

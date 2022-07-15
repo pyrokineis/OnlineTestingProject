@@ -27,7 +27,7 @@ namespace OnlineTestingProject.Controllers
         }
 
         // GET
-        [Authorize(Roles = "Admin, Student, Teacher")]
+        //[Authorize(Roles = "Admin, Student, Teacher")]
         public ActionResult Index()
         {
             var user = _userService.GetUserById(User.Identity.GetUserId());

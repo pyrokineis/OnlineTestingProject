@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using OnlineTestingProject.Interfaces;
 using OnlineTestingProject.Models;
 using OnlineTestingProject.Models.Enums;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace OnlineTestingProject.Controllers
 {
@@ -27,7 +29,7 @@ namespace OnlineTestingProject.Controllers
         }
 
         // GET: Student
-        [Authorize(Roles = "Student, Admin")]
+        //[Authorize(Roles = "Student, Admin")]
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
@@ -35,9 +37,11 @@ namespace OnlineTestingProject.Controllers
             var listForUser = _testService.GetTestsAssignedDirectlyToUser(userId);
             var userGroups = _groupService.GetUserGroups(userId);
             var listFoGroups = _testService.GetTestsAssignedToUsersGroups(userGroups);
-            
+
+            //new DriverManager().SetUpDriver(new ChromeConfig());
 
             var resList = listForUser.Union(listFoGroups).ToList();
+            ViewBag.finishCount = resList.Where(x => x.Status == TestStatus.Finished).Count();
             return View(resList);
         }
 
@@ -51,37 +55,38 @@ namespace OnlineTestingProject.Controllers
 
         public ActionResult TestPage(int id, bool? isStarted)
         {
+            var userId = User.Identity.GetUserId();
             var test = _testService.GetTest(id);        //get test by Id
-
             TestVM testVM = new TestVM(test);
 
-            var qsts = _testService.GetQuestionsInTest(test);            // get all questions in test
-/*            var qstsOpts = _answerService.GetAnswersOptions(qsts);   */        //get all answer options for every question
-
-            //ViewBag.Qstns = qsts;
-            //ViewBag.QstOptions = qstsOpts;  //get all answer options for every question
-
-            string[] mas;
-            foreach (Question qst in qsts)
-            {
-                mas = _answerService.GetAnswerOptionsStrings(qst);  //get strings of qsts options
-                testVM.Add(qst, mas);
-            }
-
-
-
-            if (isStarted == null)
-                return View(testVM);
-            
-
-            if (isStarted==true)
+            if (isStarted == true)
             {
                 test.Status = TestStatus.InProgress;
                 _testService.Update(test);
             }
 
-            return View(testVM);
+            if (test.Status == TestStatus.NotStarted)
+            {
+                return View(testVM);
+            }
 
+            if (test.Status == TestStatus.InProgress)
+            {
+                var qsts = _testService.GetQuestionsInTest(test);
+                List<AnswersOption> list;
+                foreach (Question qst in qsts)
+                {
+                    list = _answerService.GetAnswerOptions(qst);  //get strings of qsts options
+                    testVM.Add(qst, list);
+                }
+            }
+
+            if (test.Status == TestStatus.Finished)
+            {
+                ViewBag.Results = _testService.GetTestResult(test, userId);
+                testVM.Result = _testService.GetTestResult(test, userId);
+            }
+            return View(testVM);
         }
 
         public ActionResult TestSubmit(TestVM testVM, int testId)
@@ -90,6 +95,7 @@ namespace OnlineTestingProject.Controllers
             
             var answers = testVM.Answers;
             var test = _testService.GetTest(testId);
+
             var questionsInTest = _testService.GetQuestionsInTest(test);
 
 
@@ -104,6 +110,8 @@ namespace OnlineTestingProject.Controllers
                 _answerService.AddUserAnswer(question, test, entry.Value, userId, res);
             }
 
+           var score = _testService.GetTestScore(test, userId);
+            _testService.SaveTestResults(test, userId, score);
             return Redirect(Request.UrlReferrer.ToString());
         }
     }

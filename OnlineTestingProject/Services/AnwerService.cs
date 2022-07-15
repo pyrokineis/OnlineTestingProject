@@ -19,15 +19,15 @@ namespace OnlineTestingProject.Services
 
         public AnswerResult CompareAnswer(Question qst, Test test, string userId, string AnsData)
         {
-            switch (qst.TypeId)
+            switch (qst.Type)
             {
 
-                case 1:  //single
+                case QuestionsTypes.Тестовый:  //single
                     if (AnsData == qst.AnswerData)
                         return AnswerResult.Max;
                     return AnswerResult.Min;
 
-                case 2:  //multiple
+                case QuestionsTypes.НесколькоВариатов:  //multiple
                     string[] mas1 = AnsData.Split(',');  //user
                     string[] mas2 = qst.AnswerData.Split(',');  //true
                     bool isSubset = mas1.All(elem => mas2.Contains(elem));
@@ -48,7 +48,7 @@ namespace OnlineTestingProject.Services
 
                     return AnswerResult.Min;
 
-                case 3: //text
+                case QuestionsTypes.Текстовый: //text
                     if (AnsData==qst.AnswerData.Trim())
                         return AnswerResult.Max;
                     return AnswerResult.Min;
@@ -65,18 +65,18 @@ namespace OnlineTestingProject.Services
 
         public AnswerResult CompareAnswer(Question qst, Test test, string userId, string[] AnsData)
         {
-            switch (qst.TypeId)
+            switch (qst.Type)
             {
 
-                case 1:  //single
+                case QuestionsTypes.Тестовый:  //single
                     if (AnsData[0] == qst.AnswerData)
                         return AnswerResult.Max;
                     return AnswerResult.Min;
 
-                case 2:  //multiple
+                case QuestionsTypes.НесколькоВариатов:  //multiple
                     //string[] mas1 = AnsData.Split(',');
                     string[] mas2 = qst.AnswerData.Split(',');
-                    bool isSubset = AnsData.All(elem => mas2.Contains(elem));
+                    bool isSubset = mas2.All(elem => AnsData.Contains(elem));
                     if (isSubset)
                         return AnswerResult.Max;
 
@@ -94,14 +94,15 @@ namespace OnlineTestingProject.Services
 
                     return AnswerResult.Min;
 
-                case 3: //text
-                    if (AnsData[0] == qst.AnswerData.Trim())
+                case QuestionsTypes.Текстовый: //text
+                    if (AnsData[0].Trim().ToLower() == qst.AnswerData.Trim().ToLower())
                         return AnswerResult.Max;
                     return AnswerResult.Min;
 
-                //case 4: //compare
-
-
+                case QuestionsTypes.Порядок: //order
+                    if (AnsData.SequenceEqual(qst.AnswerData.Split(',')))
+                        return AnswerResult.Max;
+                    return AnswerResult.Min;
                 default: return AnswerResult.Min;
 
 
@@ -138,11 +139,25 @@ namespace OnlineTestingProject.Services
         public void AddAnswerOption(Question qst, string text)
         {
             _dbContext.Questions.Attach(qst);
-            _dbContext.AnswersOptions.Add(new AnswersOption
+            qst.AnswerOptionsAmount += 1;
+            _dbContext.Questions.Update(qst);
+           _dbContext.AnswersOptions.Add(new AnswersOption
             {
                 QuestionId = qst.Id,
                 Text = text,
             });
+            _dbContext.Save();
+        }
+
+        public void DeleteAnswerOption(int optId)
+        {
+            var obj = _dbContext.AnswersOptions.Get(optId.ToString());
+            var qst = _dbContext.Questions.Get(obj.QuestionId.ToString());
+
+            _dbContext.Questions.Attach(qst);
+            qst.AnswerOptionsAmount -= 1;
+            _dbContext.Questions.Update(qst);
+            _dbContext.AnswersOptions.Delete(optId);
             _dbContext.Save();
         }
 
@@ -151,8 +166,8 @@ namespace OnlineTestingProject.Services
             _dbContext.UserAnswers.Add(new UserAnswer
             {
                 UserId = userId,
-                Question = qst,
-                Test = test,
+                QuestionId = qst.Id,
+                TestId = test.Id,
                 Data = ansData,
                 Result = res
             });
@@ -161,23 +176,24 @@ namespace OnlineTestingProject.Services
 
         public void AddUserAnswer(Question qst, Test test, string[] mas, string userId, AnswerResult res)
         {
-            //_dbContext.UserAnswers.Add(new UserAnswer{ 
-            //    UserId = userId,
-            //    Question = qst,
-            //    Test = test,
-            //    Data = ansData,
-            //    Result = res
-            //});
+            string answer=string.Join(",",mas);
+
+
+            _dbContext.UserAnswers.Add(new UserAnswer
+            {
+                UserId = userId,
+                QuestionId = qst.Id,
+                TestId = test.Id,
+                Data = answer,
+                Result = res
+            });
             _dbContext.Save();
         }
 
         public List<UserAnswer> GetUserAnswersInTest(Test test, string userId)
         {
-            return _dbContext.UserAnswers.GetAll().Where(x => x.Test.Id == test.Id && x.UserId==userId).ToList();
+            return _dbContext.UserAnswers.GetAll().Where(x => x.TestId == test.Id && x.UserId==userId).ToList();
         }
-
-
-
 
     }
 }

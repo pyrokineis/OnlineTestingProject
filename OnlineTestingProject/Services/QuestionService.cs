@@ -30,7 +30,7 @@ namespace OnlineTestingProject.Services
         }
         public void AddQuestion(Question qst)
         {
-            if (qst.TypeId == 3)
+            if (qst.Type == QuestionsTypes.Текстовый)
                 _dbContext.AnswersOptions.Add(new AnswersOption {
                 QuestionId = qst.Id,
                 Text = qst.AnswerData
@@ -38,6 +38,7 @@ namespace OnlineTestingProject.Services
             _dbContext.Questions.Add(qst);
             _dbContext.Questions.Save();
         }
+
 
         public void DeleteQuestion(int id)
         {

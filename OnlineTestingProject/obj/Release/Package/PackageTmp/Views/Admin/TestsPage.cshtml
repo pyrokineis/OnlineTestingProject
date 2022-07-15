@@ -1,0 +1,40 @@
+﻿@using OnlineTestingProject.Models
+@model Test
+@{
+    ViewBag.Title = "TestsPage";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>TestsPage</h2>
+    <div>
+        <b>Добавить тест</b>
+        @using (Html.BeginForm("AddTest", "Admin", FormMethod.Post))
+        {
+    <div class="item">
+        <label>Название теста</label>
+        @Html.TextBoxFor(test => test.Name)
+        @Html.TextBoxFor(test => test.MaxPoints)
+    </div>
+            <input type="submit" value="Отправить" />
+        }
+    </div>
+    <div>
+        <b>Все тесты</b>
+        @foreach (Test test in ViewBag.testsList)
+        {
+
+            <div>
+                @test.Name
+            </div>
+            @Html.ActionLink("Открыть тест", "TestPage", "Admin", new { id = test.Id }, null);
+            @Html.ActionLink("Удалить тест", "DeleteTest", "Admin", new { id = test.Id }, null);
+        }
+    </div>
+</body>
+</html>

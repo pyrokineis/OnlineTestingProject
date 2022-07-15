@@ -1,0 +1,89 @@
+﻿@using OnlineTestingProject.Models
+@model List<Test>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Страница студента</h1>
+<hr />
+<h2>Назначенные тесты</h2>
+
+@{
+    if (Model.First() != null)
+    {
+        <table class="table" style="width: auto">
+
+            @foreach (Test test in Model)
+            {
+                if (test.Status != OnlineTestingProject.Models.Enums.TestStatus.Finished)
+                {
+                    <tr>
+                        <th>
+                            @test.Name
+                        </th>
+                        <th>
+                            <div style="white-space: normal">
+                                <a href="@Url.Action("TestPage","Student", new {id=test.Id })"
+                                   class="btn btn-primary btn-sm">Открыть тест</a>
+                            </div>
+                        </th>
+                    </tr>
+
+                }
+
+
+            }
+        </table>
+
+    }
+    else
+    {
+        <tr>
+            <th>
+                <b>Нет назначенных тестов</b>
+            </th>
+        </tr>
+
+    }
+
+}
+
+
+<hr />
+<h2>Завершенные тесты</h2>
+@{
+    if (ViewBag.finishCount > 0)
+    {
+        <table class="table" style="width: auto">
+            @foreach (Test test in Model)
+            {
+                if (test.Status == OnlineTestingProject.Models.Enums.TestStatus.Finished)
+                {
+                    <tr>
+                        <th>
+                            @test.Name
+                        </th>
+                        <th>
+                            <div style="white-space: normal">
+                                <a href="@Url.Action("TestPage","Student", new {id=test.Id })"
+                                   class="btn btn-primary btn-sm">Открыть результаты</a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+
+            }
+        </table>
+
+    }
+    else
+    {
+        <tr>
+            <th>
+                <b>Нет завершенных тестов</b>
+            </th>
+        </tr>
+    }
+
+
+}

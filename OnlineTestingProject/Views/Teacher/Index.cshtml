@@ -1,7 +1,85 @@
-﻿
+﻿@using OnlineTestingProject.Models
+@model TeacherPageVM
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1>Страница преподавателя</h1>
 
+<h2>Группы</h2>
+<div>
+    @using (Html.BeginForm("AddGroup", "Teacher", FormMethod.Post))
+    {
+        <div class="form-inline">
+            <label>Название группы: </label>
+            @Html.TextBoxFor(m => m.group.Name, new { @class = "form-control" })
+            <input type="submit" value="Создать группу" class="btn btn-primary" />
+        </div>
+
+    }
+</div>
+
+<div>
+    <table class="table">
+        @foreach (Group gr in ViewBag.groupsList)
+        {
+            <tr>
+                <th>
+                    @gr.Name
+                </th>
+                <th>
+                    <div class="d-grid gap-2 d-md-block">
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="@Url.Action("GroupPage","Teacher", new {id=gr.Id })"
+                               class="btn btn-primary btn-sm">Открыть группу</a>
+                            <a href="@Url.Action("DeleteGroup","Teacher", new {id=gr.Id })"
+                               class="btn btn-primary btn-sm">Удалить группу</a>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+<h2>Тесты</h2>
+<div>
+    @*<h3>Добавить тест</h3>*@
+    @using (Html.BeginForm("AddTest", "Teacher", FormMethod.Post))
+    {
+        <div>
+            <label>Название теста: </label>
+            @Html.TextBoxFor(Model => Model.test.Name, new { @class = "form-control" })
+            <br />
+            <label>Максимальный балл: </label>
+            @Html.TextBoxFor(test => Model.test.MaxPoints, new { @class = "form-control" })
+        </div>
+        <input type="submit" value="Создать тест" class="btn btn-primary"/>
+    }
+</div>
+<div>
+    <table class="table table-borderless">
+        @foreach (Test test in ViewBag.testsList)
+        {
+            <tr>
+                <th>
+                    @test.Name
+                </th>
+                <th>
+                    <div style="white-space: normal">
+                        <a href="@Url.Action("TestPage","Teacher", new {id=test.Id })"
+                           class="btn btn-primary btn-sm">Открыть тест</a>
+                        <a href="@Url.Action("DeleteTest","Teacher", new {id=test.Id })"
+                           class="btn btn-primary btn-sm">Удалить тест</a>
+                    </div>
+                </th>
+            </tr>
+
+
+        }
+    </table>
+
+</div>

@@ -43,16 +43,23 @@ namespace OnlineTestingProject.Repositories
         public void Delete(int id)
         {
             Test test = _dbContext.Tests.Find(id);
+
             if (test != null)
+            {
+                _dbContext.TestAssignedUsers.RemoveRange(_dbContext.TestAssignedUsers.Where(x => x.TestId == id));
+                _dbContext.TestAssignedGroups.RemoveRange(_dbContext.TestAssignedGroups.Where(x => x.TestId == id));
+                _dbContext.QuestionsInTests.RemoveRange(_dbContext.QuestionsInTests.Where(x => x.TestId == test.Id));
                 _dbContext.Tests.Remove(test);
-            _dbContext.TestAssignedUsers.RemoveRange(_dbContext.TestAssignedUsers.Where(x => x.TestId == id));
-            _dbContext.TestAssignedGroups.RemoveRange(_dbContext.TestAssignedGroups.Where(x => x.TestId == id));
+            }
+
+
 
         }
 
         public void Add(Test item)
         {
-
+            item.CreationDate = DateTime.Now;
+            item.Deadline = DateTime.Now;
             _dbContext.Tests.Add(item);
         }
 
